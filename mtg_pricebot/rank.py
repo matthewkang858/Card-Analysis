@@ -22,14 +22,21 @@ def rank_cards(
     top_n: int = 100,
     max_avg_price: float | None = 250.0,
     min_units: int = 10,
+    exclude_variants: bool = False,
 ) -> pd.DataFrame:
     """Return the top-N singles ranked by sales volume.
 
     metric: "gmv" (dollar volume, recommended) or "units".
     max_avg_price filters out ultra-expensive outliers (reserved list etc.)
     so the basket reflects what a typical buyer actually orders.
+    exclude_variants drops products with parenthetical variant tags like
+    "(Borderless) (0400)" — recommended for LIVE runs, where cross-vendor
+    matching is by name and a special printing can silently match a vendor's
+    cheap base printing, corrupting the comparison.
     """
     singles = sales[(sales["isSealed"] == 0) & (sales["units"] >= min_units)].copy()
+    if exclude_variants:
+        singles = singles[~singles["name"].str.contains(r"\(", regex=True)]
     singles["avg_price"] = singles["gmv_sale"] / singles["units"]
 
     if max_avg_price is not None:

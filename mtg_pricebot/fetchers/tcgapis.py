@@ -1,27 +1,25 @@
-"""TCGplayer prices via tcgapis.com (third-party TCGplayer API service).
+"""TCGplayer prices via tcgapis.com (docs: https://tcgapis.com/documentation,
+markdown reference: https://tcgapis.com/tcgapis-ai-builder-docs.md).
 
-Auth: an API key, supplied via the TCGAPIS_KEY environment variable (a
-gitignored .env file works — never commit the key). The key is sent both as
-a Bearer token and an X-Api-Key header, which covers the common conventions.
+Auth: API key in the `x-api-key` header, supplied via the TCGAPIS_KEY
+environment variable or a gitignored .env file — never commit the key.
 
-NOTE: this module was written while tcgapis.com was unreachable from the
-development environment, so the endpoint path and response parsing follow
-common REST conventions and are marked below. On the first live run, if the
-request 404s, check https://tcgapis.com/docs and adjust ENDPOINT_TEMPLATE /
-_parse_response(); the diagnostic print shows the raw response to make that
-a one-line fix.
+Endpoint: GET https://api.tcgapis.com/api/v2/prices/{productId}
+(the same TCGplayer productId used in the sales export, so matching is
+exact). Fetched prices are cached to CSV so re-runs don't re-spend quota.
 """
 
 import os
+import time
 from pathlib import Path
 
 import pandas as pd
 
 from .base import make_session
 
-# UNVERIFIED endpoint convention — confirm against https://tcgapis.com/docs.
-ENDPOINT_TEMPLATE = "https://tcgapis.com/api/v1/prices/{product_id}"
-BATCH_SIZE = 100
+BASE_URL = "https://api.tcgapis.com/api/v2"
+REQUEST_DELAY_S = 0.15
+CACHE_MAX_AGE_S = 6 * 3600
 
 
 def _load_key() -> str:
@@ -39,50 +37,60 @@ def _load_key() -> str:
     return key
 
 
-def _parse_response(payload) -> float | None:
-    """Pull a usable non-foil price out of one product's price payload."""
+def _parse_price(payload) -> float | None:
+    """Pull a non-foil market price out of one product's price payload."""
     if isinstance(payload, dict):
-        for k in ("marketPrice", "market_price", "price", "lowPrice", "low_price"):
+        for k in ("data", "results", "prices"):
+            if k in payload:
+                return _parse_price(payload[k])
+        for k in ("marketPrice", "market_price", "midPrice", "price",
+                  "lowPrice", "low_price"):
             v = payload.get(k)
             if isinstance(v, (int, float)) and v > 0:
                 return float(v)
-        for k in ("data", "results", "prices"):
-            if k in payload:
-                return _parse_response(payload[k])
     if isinstance(payload, list):
-        # Prefer the Normal (non-foil) subtype when rows carry one.
         rows = [r for r in payload if isinstance(r, dict)]
         normal = [r for r in rows if r.get("subTypeName", "Normal") == "Normal"]
         for r in normal or rows:
-            v = _parse_response(r)
+            v = _parse_price(r)
             if v:
                 return v
     return None
 
 
 def fetch(cards: pd.DataFrame, cfg: dict, cache_dir: Path = Path("output/cache")) -> pd.Series:
-    key = _load_key()
+    cache_dir.mkdir(parents=True, exist_ok=True)
+    cache_file = cache_dir / "tcgapis_prices.csv"
+    cached: dict[int, float] = {}
+    if cache_file.exists() and time.time() - cache_file.stat().st_mtime < CACHE_MAX_AGE_S:
+        df = pd.read_csv(cache_file)
+        cached = dict(zip(df["productId"].astype(int), df["price"]))
+
     session = make_session()
-    session.headers["Authorization"] = f"Bearer {key}"
-    session.headers["X-Api-Key"] = key
+    session.headers["x-api-key"] = _load_key()
 
     prices: dict[int, float] = {}
     first_error_shown = False
-    for pid in cards["productId"].astype(int):
+    wanted = [int(p) for p in cards["productId"]]
+    for pid in wanted:
+        if pid in cached:
+            prices[pid] = cached[pid]
+            continue
         try:
-            resp = session.get(ENDPOINT_TEMPLATE.format(product_id=pid), timeout=30)
+            resp = session.get(f"{BASE_URL}/prices/{pid}", timeout=30)
             resp.raise_for_status()
-            v = _parse_response(resp.json())
+            v = _parse_price(resp.json())
             if v:
                 prices[pid] = v
+            time.sleep(REQUEST_DELAY_S)
         except Exception as err:  # noqa: BLE001 - diagnose the first failure loudly
             if not first_error_shown:
                 body = getattr(getattr(err, "response", None), "text", "")[:500]
                 print(f"  [tcgapis] request failed for productId {pid}: {err}\n"
-                      f"  first response body: {body!r}\n"
-                      f"  -> check https://tcgapis.com/docs and adjust "
-                      f"ENDPOINT_TEMPLATE/_parse_response in fetchers/tcgapis.py")
+                      f"  first response body: {body!r}")
                 first_error_shown = True
 
+    pd.DataFrame({"productId": list(prices), "price": list(prices.values())}) \
+        .to_csv(cache_file, index=False)
     return pd.Series([prices.get(int(pid)) for pid in cards["productId"]],
                      index=cards.index, name="tcgplayer", dtype=float)

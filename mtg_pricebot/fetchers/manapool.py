@@ -1,14 +1,13 @@
-"""ManaPool prices via their public API.
+"""ManaPool prices via their public API (verified live 2026-07-20).
 
-ManaPool documents a public API at https://manapool.com/api. This module
-could not be verified against the live API from the development environment
-(network-restricted), so the endpoint path and response shape below follow
-their published docs at the time of writing — if a request 404s, check the
-docs and adjust ENDPOINT / the parsing in _extract_prices().
+GET {api_base}/prices/singles requires NO auth and returns every single
+they sell: name, set_code, scryfall_id, available_quantity, and prices in
+cents by condition/finish (price_cents = cheapest available, price_cents_nm
+= near mint, price_market = their market estimate, ...). ~50 MB, so it's
+cached. OpenAPI spec: https://manapool.com/api/docs/v1/openapi.json
 
-Auth (only if the docs say the endpoint requires it): set `email` and
-`access_token` in config.yaml; they are sent as X-ManaPool-Email /
-X-ManaPool-Access-Token headers.
+Matching is by normalized base card name, taking the cheapest in-stock
+non-foil printing — consistent with how the Card Kingdom fetcher matches.
 """
 
 import json
@@ -19,7 +18,7 @@ import pandas as pd
 
 from .base import get_json, make_session, normalize_base
 
-ENDPOINT = "/prices"  # relative to api_base, e.g. https://manapool.com/api/v1/prices
+ENDPOINT = "/prices/singles"
 CACHE_MAX_AGE_S = 6 * 3600
 
 
@@ -34,28 +33,34 @@ def _load_prices(cfg: dict, cache_dir: Path) -> list[dict]:
         session.headers["X-ManaPool-Email"] = cfg["email"]
         session.headers["X-ManaPool-Access-Token"] = cfg["access_token"]
 
-    payload = get_json(session, cfg["api_base"].rstrip("/") + ENDPOINT, timeout=120)
-    rows = payload.get("data", payload) if isinstance(payload, dict) else payload
+    payload = get_json(session, cfg["api_base"].rstrip("/") + ENDPOINT, timeout=180)
+    rows = payload.get("data", []) if isinstance(payload, dict) else payload
     cache.write_text(json.dumps(rows))
     return rows
 
 
+def _row_price(r: dict) -> float | None:
+    """Cheapest usable non-foil price in dollars: NM preferred, then LP+,
+    then any condition."""
+    if not r.get("available_quantity"):
+        return None
+    for k in ("price_cents_nm", "price_cents_lp_plus", "price_cents"):
+        cents = r.get(k)
+        if cents:
+            return cents / 100
+    return None
+
+
 def _extract_prices(rows: list[dict]) -> dict[str, float]:
-    """Map normalized base card name -> cheapest non-foil price in dollars."""
     out: dict[str, float] = {}
     for r in rows:
-        name = r.get("name") or r.get("card_name")
-        if not name:
-            continue
-        # Docs show prices in cents (price_cents / low_price_cents); fall back
-        # to a dollar field if present.
-        cents = r.get("price_cents") or r.get("low_price_cents")
-        price = cents / 100 if cents else r.get("price") or r.get("low_price")
-        if not price:
+        name = r.get("name")
+        price = _row_price(r)
+        if not name or not price:
             continue
         key = normalize_base(name)
         if key not in out or price < out[key]:
-            out[key] = float(price)
+            out[key] = price
     return out
 
 

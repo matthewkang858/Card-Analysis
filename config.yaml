@@ -17,6 +17,10 @@ ranking:
   max_avg_price: 25
   # Minimum units sold to be considered (filters one-off outlier sales)
   min_units: 10
+  # Drop "(Borderless)"/"(Showcase)"-style variant products. Keep true for
+  # live runs: cross-vendor matching is by name, and a special printing can
+  # silently match a vendor's cheap base printing, corrupting the comparison.
+  exclude_variants: true
 
 vendors:
   cardkingdom:

@@ -23,7 +23,8 @@ def cmd_rank(cfg: dict, args) -> pd.DataFrame:
     sales = rank.load_sales(args.sales)
     r = cfg["ranking"]
     cards = rank.rank_cards(sales, metric=r["metric"], top_n=r["top_n"],
-                            max_avg_price=r["max_avg_price"], min_units=r["min_units"])
+                            max_avg_price=r["max_avg_price"], min_units=r["min_units"],
+                            exclude_variants=r.get("exclude_variants", False))
     out = Path("data/top_cards.csv")
     out.parent.mkdir(parents=True, exist_ok=True)
     cards.to_csv(out, index=False)
