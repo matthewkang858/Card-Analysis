@@ -27,9 +27,9 @@ def simulate(cards: pd.DataFrame, prices: pd.DataFrame, cfg: dict,
     weights = weights / weights.sum()
 
     if sizes is None:
-        max_n = min(len(pool) - 1, 100)
-        sizes = [n for n in range(1, max_n + 1)
-                 if n <= 30 or n % 5 == 0]
+        # Past ~30 cards every curve is flat (shipping is fully amortized),
+        # so the default stops there and keeps the interesting region readable.
+        sizes = list(range(1, min(len(pool) - 1, 30) + 1))
 
     ck_cfg = cfg["vendors"]["cardkingdom"]["shipping"]
     mp_cfg = cfg["vendors"]["manapool"]["shipping"]

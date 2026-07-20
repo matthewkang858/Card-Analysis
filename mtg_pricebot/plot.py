@@ -72,10 +72,13 @@ def plot_pct_diff(curves: pd.DataFrame, crossovers: list[dict], out_path: Path,
     return out_path
 
 
+Y_CAP = 25  # percent; the 1-card shipping spike would otherwise crush the scale
+
+
 def plot_mc_band(mc: pd.DataFrame, out_path: Path, n_samples: int,
                  baseline: str = "tcgplayer") -> Path:
     """Mean vendor gap vs baseline with a 10th-90th percentile band."""
-    fig, ax = plt.subplots(figsize=(10, 6), dpi=150)
+    fig, ax = plt.subplots(figsize=(8.5, 5.2), dpi=150)
     fig.patch.set_facecolor(SURFACE)
     ax.set_facecolor(SURFACE)
 
@@ -98,6 +101,22 @@ def plot_mc_band(mc: pd.DataFrame, out_path: Path, n_samples: int,
         ax.annotate(LABELS[v], (x.iloc[-1], mc[f"{v}_gap_mean"].iloc[-1]),
                     xytext=(6, 0), textcoords="offset points",
                     color=COLORS[v], fontsize=9, fontweight="bold", va="center")
+
+    # Cap the y-scale so the tiny-order shipping spike can't crush the
+    # few-percent region where the real story lives; note what ran off.
+    bottom = min(mc[f"{v}_gap_p10"].min() for v in VENDORS if v != baseline) - 2
+    peak = max(mc[f"{v}_gap_mean"].max() for v in VENDORS if v != baseline)
+    if peak > Y_CAP:
+        ax.set_ylim(bottom, Y_CAP)
+        for v in VENDORS:
+            if v == baseline or mc[f"{v}_gap_mean"].max() <= Y_CAP:
+                continue
+            i = mc[f"{v}_gap_mean"].idxmax()
+            ax.annotate(f'{int(mc["n_cards"][i])} card: '
+                        f'{mc[f"{v}_gap_mean"][i]:+.0f}% (off scale)',
+                        (mc["n_cards"][i], Y_CAP), xytext=(8, -14),
+                        textcoords="offset points", color=COLORS[v], fontsize=8,
+                        arrowprops={"arrowstyle": "-", "color": COLORS[v], "alpha": 0.6})
 
     ax.set_xlabel("Cards in basket", color=MUTED)
     ax.set_ylabel(f"Cost vs {LABELS[baseline]} (%)  —  below 0 = cheaper", color=MUTED)
