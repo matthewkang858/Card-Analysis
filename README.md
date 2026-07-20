@@ -50,7 +50,7 @@ Outputs land in `output/`:
 
 | Vendor | Source | Matching |
 |---|---|---|
-| TCGplayer | [tcgcsv.com](https://tcgcsv.com) daily mirror of the official price feed | exact, by the `productId` already in the sales export |
+| TCGplayer | [tcgapis.com](https://tcgapis.com) (`source: tcgapis`, needs `TCGAPIS_KEY` in env or gitignored `.env`) or [tcgcsv.com](https://tcgcsv.com) free daily mirror (`source: tcgcsv`) | exact, by the `productId` already in the sales export |
 | Card Kingdom | their public [pricelist API](https://api.cardkingdom.com/api/pricelist) | normalized name, then base name w/o variant tags (cheapest in-stock non-foil) |
 | ManaPool | their [public API](https://manapool.com/api) | normalized base name. **Endpoint unverified** — written from their docs; adjust `mtg_pricebot/fetchers/manapool.py` if it 404s, and add credentials in `config.yaml` if required |
 

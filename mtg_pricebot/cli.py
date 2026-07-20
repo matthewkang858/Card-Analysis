@@ -13,7 +13,7 @@ import pandas as pd
 
 from . import basket, montecarlo, plot, rank
 from .config import load_config
-from .fetchers import cardkingdom, demo, manapool, tcgplayer
+from .fetchers import cardkingdom, demo, manapool, tcgapis, tcgplayer
 
 DEFAULT_SALES = "data/raw/mtg_results.xlsx"
 
@@ -39,8 +39,13 @@ def fetch_prices(cards: pd.DataFrame, cfg: dict, use_demo: bool) -> pd.DataFrame
 
     cache = Path(cfg["output_dir"]) / "cache"
     prices = pd.DataFrame(index=cards.index)
-    print("Fetching TCGplayer prices (tcgcsv.com, exact productId match) ...")
-    prices["tcgplayer"] = tcgplayer.fetch(cards, cfg["vendors"]["tcgplayer"], cache)
+    tcg_cfg = cfg["vendors"]["tcgplayer"]
+    if tcg_cfg.get("source", "tcgcsv") == "tcgapis":
+        print("Fetching TCGplayer prices (tcgapis.com, exact productId match) ...")
+        prices["tcgplayer"] = tcgapis.fetch(cards, tcg_cfg, cache)
+    else:
+        print("Fetching TCGplayer prices (tcgcsv.com, exact productId match) ...")
+        prices["tcgplayer"] = tcgplayer.fetch(cards, tcg_cfg, cache)
     print("Fetching Card Kingdom pricelist ...")
     prices["cardkingdom"] = cardkingdom.fetch(cards, cfg["vendors"]["cardkingdom"], cache)
     print("Fetching ManaPool prices ...")

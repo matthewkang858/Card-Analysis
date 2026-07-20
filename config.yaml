@@ -27,6 +27,9 @@ vendors:
       flat_fee: 4.99          # ASSUMPTION: typical sub-threshold US shipping cost
 
   tcgplayer:
+    # Price source: "tcgcsv" (free daily mirror, no key) or "tcgapis"
+    # (tcgapis.com, needs TCGAPIS_KEY in the environment or a gitignored .env).
+    source: tcgapis
     # tcgcsv.com mirrors TCGplayer's daily price feed, keyed by the same
     # productId that appears in data/raw/mtg_results.xlsx. Magic category = 1.
     tcgcsv_base: "https://tcgcsv.com/tcgplayer"
