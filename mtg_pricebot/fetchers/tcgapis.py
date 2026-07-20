@@ -37,24 +37,42 @@ def _load_key() -> str:
     return key
 
 
+PRICE_FIELDS = ("marketPrice", "midPrice", "directLowPrice", "lowPrice")
+
+
+def _variant_price(variant: dict) -> float | None:
+    for k in PRICE_FIELDS:
+        v = variant.get(k)
+        if isinstance(v, (int, float)) and v > 0:
+            return float(v)
+    return None
+
+
 def _parse_price(payload) -> float | None:
-    """Pull a non-foil market price out of one product's price payload."""
-    if isinstance(payload, dict):
-        for k in ("data", "results", "prices"):
-            if k in payload:
-                return _parse_price(payload[k])
-        for k in ("marketPrice", "market_price", "midPrice", "price",
-                  "lowPrice", "low_price"):
-            v = payload.get(k)
-            if isinstance(v, (int, float)) and v > 0:
-                return float(v)
-    if isinstance(payload, list):
-        rows = [r for r in payload if isinstance(r, dict)]
-        normal = [r for r in rows if r.get("subTypeName", "Normal") == "Normal"]
-        for r in normal or rows:
-            v = _parse_price(r)
+    """Pull a non-foil market price from a /v2/prices/{productId} response.
+
+    Shape (verified live): {"success": true, "data": {"productId": ...,
+    "prices": {"Normal": {marketPrice, midPrice, lowPrice, directLowPrice},
+               "Foil": {...}, ...}}}
+    Prefers the Normal variant; falls back to any variant with a price.
+    """
+    if not isinstance(payload, dict):
+        return None
+    data = payload.get("data", payload)
+    variants = data.get("prices", {}) if isinstance(data, dict) else {}
+    if isinstance(variants, dict):
+        normal = variants.get("Normal")
+        if isinstance(normal, dict):
+            v = _variant_price(normal)
             if v:
                 return v
+        for variant in variants.values():
+            if isinstance(variant, dict):
+                v = _variant_price(variant)
+                if v:
+                    return v
+    if isinstance(data, dict):
+        return _variant_price(data)
     return None
 
 
