@@ -32,9 +32,9 @@ Outputs land in `output/`:
 
 | File | What it is |
 |---|---|
-| `crossover_chart*.png` | The three cost curves + crossover markers |
-| `crossover_zoom*.png` | Zoom on the $0–200 region where shipping thresholds bite |
-| `crossover_by_cards*.png` | Same curves with card count on the x-axis |
+| `crossover_chart*.png` | The three cost curves + crossover markers (x = cards in basket) |
+| `crossover_zoom*.png` | Zoom on the first 25 cards, where shipping thresholds bite |
+| `crossover_by_value*.png` | Same curves with order value ($) on the x-axis |
 | `basket_curves*.csv` | Every basket step: subtotal / shipping / total per vendor |
 | `data/top_cards.csv` | The ranked basket (from `rank` step) |
 

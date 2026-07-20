@@ -33,10 +33,15 @@ def plot_curves(curves: pd.DataFrame, crossovers: list[dict], out_path: Path,
     for ev in crossovers:
         if ev["direction"] != "cheaper":
             continue
-        ax.axvline(ev["order_value"], color=MUTED, linewidth=1, linestyle="--", alpha=0.7)
+        if x_col == "n_cards":
+            xv = ev["n_cards"]
+            note = f'{LABELS[ev["vendor"]]} cheaper\nfrom ~{ev["n_cards"]} cards (${ev["order_value"]:,.0f})'
+        else:
+            xv = ev["order_value"]
+            note = f'{LABELS[ev["vendor"]]} cheaper\nfrom ~${ev["order_value"]:,.0f}'
+        ax.axvline(xv, color=MUTED, linewidth=1, linestyle="--", alpha=0.7)
         y0, y1 = ax.get_ylim()
-        ax.annotate(f'{LABELS[ev["vendor"]]} cheaper\nfrom ~${ev["order_value"]:,.0f}',
-                    (ev["order_value"], y0 + 0.05 * (y1 - y0)),
+        ax.annotate(note, (xv, y0 + 0.05 * (y1 - y0)),
                     color=INK, fontsize=8, ha="left", va="bottom",
                     xytext=(4, 0), textcoords="offset points")
 

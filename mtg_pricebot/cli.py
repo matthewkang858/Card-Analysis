@@ -66,16 +66,18 @@ def cmd_run(cfg: dict, args):
 
     curves_path = out_dir / f"basket_curves{suffix}.csv"
     curves.to_csv(curves_path, index=False)
-    chart_path = plot.plot_curves(curves, crossovers, out_dir / f"crossover_chart{suffix}.png")
-    chart_n_path = plot.plot_curves(curves, [], out_dir / f"crossover_by_cards{suffix}.png",
-                                    x_col="n_cards")
-    # Zoomed view of the small-order region where shipping thresholds bite.
-    zoom = curves[curves["order_value"] <= 200]
+    chart_path = plot.plot_curves(curves, crossovers, out_dir / f"crossover_chart{suffix}.png",
+                                  x_col="n_cards")
+    chart_v_path = plot.plot_curves(curves, crossovers,
+                                    out_dir / f"crossover_by_value{suffix}.png")
+    # Zoomed view of the small-basket region where shipping thresholds bite.
+    zoom = curves[curves["n_cards"] <= 25]
     if len(zoom) >= 3:
-        zoom_events = [ev for ev in crossovers if ev["order_value"] <= 200]
-        plot.plot_curves(zoom, zoom_events, out_dir / f"crossover_zoom{suffix}.png")
+        zoom_events = [ev for ev in crossovers if ev["n_cards"] <= 25]
+        plot.plot_curves(zoom, zoom_events, out_dir / f"crossover_zoom{suffix}.png",
+                         x_col="n_cards")
 
-    print(f"\nWrote {curves_path}\nWrote {chart_path}\nWrote {chart_n_path}\n")
+    print(f"\nWrote {curves_path}\nWrote {chart_path}\nWrote {chart_v_path}\n")
     print("=== Crossovers vs TCGplayer (all-in cost) ===")
     if not crossovers:
         print("  none — one vendor stays cheapest across the whole range")
