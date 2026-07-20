@@ -11,7 +11,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from . import basket, plot, rank
+from . import basket, montecarlo, plot, rank
 from .config import load_config
 from .fetchers import cardkingdom, demo, manapool, tcgplayer
 
@@ -49,6 +49,34 @@ def fetch_prices(cards: pd.DataFrame, cfg: dict, use_demo: bool) -> pd.DataFrame
         n = prices[v].notna().sum()
         print(f"  {v}: matched {n}/{len(cards)} cards")
     return prices
+
+
+def cmd_mc(cfg: dict, args):
+    cards = cmd_rank(cfg, args)
+    prices = fetch_prices(cards, cfg, args.demo)
+
+    print(f"Sampling {args.samples} baskets per size (weighted by units sold) ...")
+    mc = montecarlo.simulate(cards, prices, cfg, n_samples=args.samples)
+
+    out_dir = Path(cfg["output_dir"])
+    out_dir.mkdir(parents=True, exist_ok=True)
+    suffix = "_demo" if args.demo else ""
+    mc_path = out_dir / f"mc_gap{suffix}.csv"
+    mc.to_csv(mc_path, index=False)
+    chart = plot.plot_mc_band(mc, out_dir / f"mc_gap_chart{suffix}.png", args.samples)
+    print(f"\nWrote {mc_path}\nWrote {chart}\n")
+
+    print("=== Mean gap vs TCGplayer (10th-90th pct across baskets) ===")
+    for n in (1, 3, 5, 10, 20, 50, mc["n_cards"].max()):
+        r = mc[mc.n_cards == n]
+        if r.empty:
+            continue
+        r = r.iloc[0]
+        print(f"  {int(r.n_cards):3d} cards (~${r.order_value_mean:7,.0f}): "
+              f"CK {r.cardkingdom_gap_mean:+5.1f}% [{r.cardkingdom_gap_p10:+5.1f}, "
+              f"{r.cardkingdom_gap_p90:+5.1f}]   "
+              f"MP {r.manapool_gap_mean:+5.1f}% [{r.manapool_gap_p10:+5.1f}, "
+              f"{r.manapool_gap_p90:+5.1f}]")
 
 
 def cmd_run(cfg: dict, args):
@@ -108,10 +136,17 @@ def main(argv=None):
     pu.add_argument("--demo", action="store_true",
                     help="offline mode: model vendor prices from real sale prices")
 
+    pm = sub.add_parser("mc", help="Monte Carlo: aggregate gap across sampled baskets")
+    pm.add_argument("--sales", default=DEFAULT_SALES)
+    pm.add_argument("--demo", action="store_true")
+    pm.add_argument("--samples", type=int, default=300, help="baskets per size")
+
     args = p.parse_args(argv)
     cfg = load_config(args.config)
     if args.command == "rank":
         cmd_rank(cfg, args)
+    elif args.command == "mc":
+        cmd_mc(cfg, args)
     else:
         cmd_run(cfg, args)
 

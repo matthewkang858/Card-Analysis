@@ -26,6 +26,12 @@ python -m mtg_pricebot run --demo
 
 # Live prices (needs normal internet access):
 python -m mtg_pricebot run
+
+# Monte Carlo aggregate view (recommended): the incremental curve traces one
+# arbitrary card ordering, so each step is noisy. This instead samples many
+# random baskets per size (weighted by real units sold) and plots the MEAN
+# vendor gap vs TCGplayer with a 10th-90th percentile band.
+python -m mtg_pricebot mc --demo --samples 300
 ```
 
 Outputs land in `output/`:
@@ -35,6 +41,8 @@ Outputs land in `output/`:
 | `crossover_chart*.png` | % cost difference vs TCGplayer (0 = baseline, below = cheaper), x = cards in basket |
 | `crossover_zoom*.png` | Same % view zoomed on the first 25 cards, where shipping thresholds bite |
 | `crossover_by_value*.png` | Absolute all-in cost curves with order value ($) on the x-axis |
+| `mc_gap_chart*.png` | Monte Carlo: mean gap vs TCGplayer + percentile band (`mc` command) |
+| `mc_gap*.csv` | Per-size mean / p10 / p90 gap stats behind the MC chart |
 | `basket_curves*.csv` | Every basket step: subtotal / shipping / total per vendor |
 | `data/top_cards.csv` | The ranked basket (from `rank` step) |
 

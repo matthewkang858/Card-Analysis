@@ -72,6 +72,49 @@ def plot_pct_diff(curves: pd.DataFrame, crossovers: list[dict], out_path: Path,
     return out_path
 
 
+def plot_mc_band(mc: pd.DataFrame, out_path: Path, n_samples: int,
+                 baseline: str = "tcgplayer") -> Path:
+    """Mean vendor gap vs baseline with a 10th-90th percentile band."""
+    fig, ax = plt.subplots(figsize=(10, 6), dpi=150)
+    fig.patch.set_facecolor(SURFACE)
+    ax.set_facecolor(SURFACE)
+
+    x = mc["n_cards"]
+    ax.axhline(0, color=COLORS[baseline], linewidth=2)
+    ax.annotate(f"{LABELS[baseline]} (baseline)", (x.iloc[-1], 0),
+                xytext=(6, 5), textcoords="offset points",
+                color=COLORS[baseline], fontsize=9, fontweight="bold", va="bottom")
+
+    for v in VENDORS:
+        if v == baseline:
+            continue
+        ax.fill_between(x, mc[f"{v}_gap_p10"], mc[f"{v}_gap_p90"],
+                        color=COLORS[v], alpha=0.15, linewidth=0)
+        ax.plot(x, mc[f"{v}_gap_mean"], color=COLORS[v], linewidth=2, label=LABELS[v])
+        ax.annotate(LABELS[v], (x.iloc[-1], mc[f"{v}_gap_mean"].iloc[-1]),
+                    xytext=(6, 0), textcoords="offset points",
+                    color=COLORS[v], fontsize=9, fontweight="bold", va="center")
+
+    ax.set_xlabel("Cards in basket", color=MUTED)
+    ax.set_ylabel(f"All-in cost vs {LABELS[baseline]} (%)  —  below 0 = cheaper", color=MUTED)
+    ax.set_title(f"Aggregate cost gap vs {LABELS[baseline]} "
+                 f"({n_samples} sampled baskets per size)\n"
+                 "Line = mean gap; band = 10th-90th percentile across baskets",
+                 color=INK, fontsize=11)
+    ax.grid(True, color=GRID, linewidth=0.75)
+    ax.tick_params(colors=MUTED)
+    for spine in ax.spines.values():
+        spine.set_color(GRID)
+    ax.legend(loc="upper right", frameon=False, labelcolor=INK)
+    ax.margins(x=0.12)
+
+    fig.tight_layout()
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(out_path, facecolor=SURFACE)
+    plt.close(fig)
+    return out_path
+
+
 def plot_curves(curves: pd.DataFrame, crossovers: list[dict], out_path: Path,
                 x_col: str = "order_value") -> Path:
     fig, ax = plt.subplots(figsize=(10, 6), dpi=150)
