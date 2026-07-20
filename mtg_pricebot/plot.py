@@ -90,16 +90,21 @@ def plot_mc_band(mc: pd.DataFrame, out_path: Path, n_samples: int,
             continue
         ax.fill_between(x, mc[f"{v}_gap_p10"], mc[f"{v}_gap_p90"],
                         color=COLORS[v], alpha=0.15, linewidth=0)
-        ax.plot(x, mc[f"{v}_gap_mean"], color=COLORS[v], linewidth=2, label=LABELS[v])
+        ax.plot(x, mc[f"{v}_gap_mean"], color=COLORS[v], linewidth=2,
+                label=f"{LABELS[v]} — all-in (cards + shipping)")
+        if f"{v}_subgap_mean" in mc.columns:
+            ax.plot(x, mc[f"{v}_subgap_mean"], color=COLORS[v], linewidth=1.5,
+                    linestyle="--", alpha=0.8, label=f"{LABELS[v]} — cards only")
         ax.annotate(LABELS[v], (x.iloc[-1], mc[f"{v}_gap_mean"].iloc[-1]),
                     xytext=(6, 0), textcoords="offset points",
                     color=COLORS[v], fontsize=9, fontweight="bold", va="center")
 
     ax.set_xlabel("Cards in basket", color=MUTED)
-    ax.set_ylabel(f"All-in cost vs {LABELS[baseline]} (%)  —  below 0 = cheaper", color=MUTED)
-    ax.set_title(f"Aggregate cost gap vs {LABELS[baseline]} "
+    ax.set_ylabel(f"Cost vs {LABELS[baseline]} (%)  —  below 0 = cheaper", color=MUTED)
+    ax.set_title(f"Cost gap vs {LABELS[baseline]}: card prices vs shipping "
                  f"({n_samples} sampled baskets per size)\n"
-                 "Line = mean gap; band = 10th-90th percentile across baskets",
+                 "Solid = all-in cost gap; dashed = card prices only — "
+                 "the space between is shipping",
                  color=INK, fontsize=11)
     ax.grid(True, color=GRID, linewidth=0.75)
     ax.tick_params(colors=MUTED)

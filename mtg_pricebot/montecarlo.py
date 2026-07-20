@@ -40,6 +40,7 @@ def simulate(cards: pd.DataFrame, prices: pd.DataFrame, cfg: dict,
     rows = []
     for n in sizes:
         gaps = {v: [] for v in VENDORS if v != "tcgplayer"}
+        subgaps = {v: [] for v in VENDORS if v != "tcgplayer"}
         order_values = []
         for _ in range(n_samples):
             idx = rng.choice(len(pool), size=n, replace=False, p=weights)
@@ -57,6 +58,10 @@ def simulate(cards: pd.DataFrame, prices: pd.DataFrame, cfg: dict,
             order_values.append(tcg_sub)
             gaps["cardkingdom"].append((ck_total / tcg_total - 1) * 100)
             gaps["manapool"].append((mp_total / tcg_total - 1) * 100)
+            # Cards-only gap: same baskets, shipping excluded on both sides.
+            # The spread between this and the all-in gap IS the shipping effect.
+            subgaps["cardkingdom"].append((ck_sub / tcg_sub - 1) * 100)
+            subgaps["manapool"].append((mp_sub / tcg_sub - 1) * 100)
 
         row = {"n_cards": n, "order_value_mean": float(np.mean(order_values))}
         for v, g in gaps.items():
@@ -64,5 +69,6 @@ def simulate(cards: pd.DataFrame, prices: pd.DataFrame, cfg: dict,
             row[f"{v}_gap_mean"] = float(g.mean())
             row[f"{v}_gap_p10"] = float(np.percentile(g, 10))
             row[f"{v}_gap_p90"] = float(np.percentile(g, 90))
+            row[f"{v}_subgap_mean"] = float(np.mean(subgaps[v]))
         rows.append(row)
     return pd.DataFrame(rows)
