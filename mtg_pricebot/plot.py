@@ -113,6 +113,52 @@ def plot_win_rate(mc: pd.DataFrame, out_path: Path, n_samples: int,
     return out_path
 
 
+BASELINE_STYLES = {"market": "-", "low": "--", "cart": ":"}
+BASELINE_LABELS = {"market": "vs TCG market price", "low": "vs TCG lowest listing",
+                   "cart": "vs TCG simulated real cart"}
+
+
+def plot_baselines(df: pd.DataFrame, out_path: Path) -> Path:
+    """CK / ManaPool % gap against three TCGplayer baselines by basket size."""
+    fig, ax = plt.subplots(figsize=(9.5, 5.8), dpi=150)
+    fig.patch.set_facecolor(SURFACE)
+    ax.set_facecolor(SURFACE)
+
+    x = df["n_cards"]
+    ax.axhline(0, color=COLORS["tcgplayer"], linewidth=2)
+    ax.annotate("TCGplayer baseline", (x.min(), 0), xytext=(2, 5),
+                textcoords="offset points", color=COLORS["tcgplayer"],
+                fontsize=9, fontweight="bold", va="bottom", ha="left")
+
+    for v, vcol in (("cardkingdom", "ck_total"), ("manapool", "mp_total")):
+        for b in ("market", "low", "cart"):
+            gap = (df[vcol] / df[f"tcg_{b}_total"] - 1) * 100
+            ax.plot(x, gap, color=COLORS[v], linestyle=BASELINE_STYLES[b],
+                    linewidth=2 if b == "cart" else 1.5,
+                    alpha=1.0 if b == "cart" else 0.75,
+                    label=f"{LABELS[v]} {BASELINE_LABELS[b]}")
+
+    ax.set_xlabel("Cards in basket", color=MUTED)
+    ax.set_ylabel("All-in cost vs TCGplayer baseline (%)  —  below 0 = cheaper",
+                  color=MUTED)
+    ax.set_title("Does the TCGplayer baseline change the answer?\n"
+                 "Same basket, three baselines: market price, lowest listing, "
+                 "simulated multi-seller cart",
+                 color=INK, fontsize=11)
+    ax.grid(True, color=GRID, linewidth=0.75)
+    ax.tick_params(colors=MUTED)
+    for spine in ax.spines.values():
+        spine.set_color(GRID)
+    ax.legend(loc="upper right", frameon=False, labelcolor=INK, fontsize=8)
+    ax.margins(x=0.05)
+
+    fig.tight_layout()
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(out_path, facecolor=SURFACE)
+    plt.close(fig)
+    return out_path
+
+
 def plot_single_card(merged: pd.DataFrame, cfg: dict, out_path: Path) -> Path:
     """Absolute all-in cost of buying ONE card at each vendor.
 

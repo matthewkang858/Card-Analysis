@@ -113,6 +113,74 @@ def cmd_single(cfg: dict, args):
     print(f"\nWrote {chart}")
 
 
+def cmd_baselines(cfg: dict, args):
+    from .basket import flat_threshold_shipping, tcg_multiseller_shipping
+    from .fetchers import tcg_cart
+
+    cards = cmd_rank(cfg, args)
+    cache = Path(cfg["output_dir"]) / "cache"
+
+    print("Fetching TCGplayer market + low prices ...")
+    tcg = tcgapis.fetch_table(cards, cache)
+    print("Fetching CK + ManaPool prices ...")
+    ck = cardkingdom.fetch(cards, cfg["vendors"]["cardkingdom"], cache)
+    mp = manapool.fetch(cards, cfg["vendors"]["manapool"], cache)
+    print("Fetching TCGplayer live listings (real-cart simulation) ...")
+    listings = tcg_cart.fetch_listings(cards, cache)
+
+    d = cards.join(tcg)
+    d["ck"], d["mp"] = ck, mp
+    d["has_listings"] = [bool(listings.get(int(p))) for p in d["productId"]]
+    d = d.dropna(subset=["tcg_market", "tcg_low", "ck", "mp"])
+    d = d[d["has_listings"]]
+    print(f"  {len(d)} cards priced at every vendor + baseline")
+
+    ck_cfg = cfg["vendors"]["cardkingdom"]["shipping"]
+    mp_cfg = cfg["vendors"]["manapool"]["shipping"]
+    tcg_cfg = cfg["vendors"]["tcgplayer"]["shipping"]
+
+    rows = []
+    pids, mkt, low = [], [], []
+    cum = {"ck": 0.0, "mp": 0.0}
+    for _, card in d.iterrows():
+        pids.append(int(card["productId"]))
+        mkt.append(card["tcg_market"]); low.append(card["tcg_low"])
+        cum["ck"] += card["ck"]; cum["mp"] += card["mp"]
+
+        model_ship = lambda ps: tcg_multiseller_shipping(
+            ps, tcg_cfg["cards_per_seller"], tcg_cfg["per_seller_fee"],
+            tcg_cfg["seller_free_threshold"])
+        cart_items, cart_ship, n_sellers = tcg_cart.cart_total(pids, listings)
+        rows.append({
+            "n_cards": len(pids),
+            "tcg_market_total": round(sum(mkt) + model_ship(mkt), 2),
+            "tcg_low_total": round(sum(low) + model_ship(low), 2),
+            "tcg_cart_total": round(cart_items + cart_ship, 2),
+            "tcg_cart_sellers": n_sellers,
+            "ck_total": round(cum["ck"] + flat_threshold_shipping(
+                cum["ck"], ck_cfg["free_threshold"], ck_cfg["flat_fee"]), 2),
+            "mp_total": round(cum["mp"] + flat_threshold_shipping(
+                cum["mp"], mp_cfg["free_threshold"], mp_cfg["flat_fee"]), 2),
+        })
+
+    out_dir = Path(cfg["output_dir"])
+    df = pd.DataFrame(rows)
+    df.to_csv(out_dir / "baselines.csv", index=False)
+    chart = plot.plot_baselines(df, out_dir / "baselines_chart.png")
+    print(f"\nWrote {out_dir / 'baselines.csv'}\nWrote {chart}\n")
+
+    print("=== Full basket, all-in totals ===")
+    f = df.iloc[-1]
+    print(f"  TCG market:      ${f.tcg_market_total:>9,.2f}")
+    print(f"  TCG lowest:      ${f.tcg_low_total:>9,.2f}")
+    print(f"  TCG cart (sim):  ${f.tcg_cart_total:>9,.2f}  ({int(f.tcg_cart_sellers)} sellers)")
+    print(f"  Card Kingdom:    ${f.ck_total:>9,.2f}")
+    print(f"  ManaPool:        ${f.mp_total:>9,.2f}")
+    for b in ("market", "low", "cart"):
+        print(f"  CK vs {b:6s}: {100*(f.ck_total/f[f'tcg_{b}_total']-1):+6.1f}%   "
+              f"MP vs {b:6s}: {100*(f.mp_total/f[f'tcg_{b}_total']-1):+6.1f}%")
+
+
 def cmd_run(cfg: dict, args):
     cards = cmd_rank(cfg, args)
     prices = fetch_prices(cards, cfg, args.demo)
@@ -187,6 +255,11 @@ def main(argv=None):
     ps.add_argument("--max-price", type=float, default=None,
                     help="override ranking.max_avg_price (e.g. 500 for the wide view)")
 
+    pb = sub.add_parser("baselines",
+                        help="compare CK/MP against TCG market, lowest listing, and "
+                             "a simulated real multi-seller cart")
+    pb.add_argument("--sales", default=DEFAULT_SALES)
+
     args = p.parse_args(argv)
     cfg = load_config(args.config)
     if args.command == "rank":
@@ -195,6 +268,8 @@ def main(argv=None):
         cmd_mc(cfg, args)
     elif args.command == "single":
         cmd_single(cfg, args)
+    elif args.command == "baselines":
+        cmd_baselines(cfg, args)
     else:
         cmd_run(cfg, args)
 

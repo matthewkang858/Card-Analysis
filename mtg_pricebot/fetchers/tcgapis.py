@@ -76,39 +76,65 @@ def _parse_price(payload) -> float | None:
     return None
 
 
-def fetch(cards: pd.DataFrame, cfg: dict, cache_dir: Path = Path("output/cache")) -> pd.Series:
+def _parse_variant(payload) -> dict | None:
+    """Return the Normal (or best available) variant dict from a response."""
+    if not isinstance(payload, dict):
+        return None
+    data = payload.get("data", payload)
+    variants = data.get("prices", {}) if isinstance(data, dict) else {}
+    if isinstance(variants, dict):
+        normal = variants.get("Normal")
+        if isinstance(normal, dict) and _variant_price(normal):
+            return normal
+        for variant in variants.values():
+            if isinstance(variant, dict) and _variant_price(variant):
+                return variant
+    return None
+
+
+def fetch_table(cards: pd.DataFrame, cache_dir: Path = Path("output/cache")) -> pd.DataFrame:
+    """Market AND lowest-listing price per card (indexed like `cards`)."""
     cache_dir.mkdir(parents=True, exist_ok=True)
-    cache_file = cache_dir / "tcgapis_prices.csv"
-    cached: dict[int, float] = {}
+    cache_file = cache_dir / "tcgapis_prices_full.csv"
+    cached: dict[int, tuple] = {}
     if cache_file.exists() and time.time() - cache_file.stat().st_mtime < CACHE_MAX_AGE_S:
         df = pd.read_csv(cache_file)
-        cached = dict(zip(df["productId"].astype(int), df["price"]))
+        cached = {int(r.productId): (r.market, r.low) for r in df.itertuples()}
 
     session = make_session()
     session.headers["x-api-key"] = _load_key()
 
-    prices: dict[int, float] = {}
+    out: dict[int, tuple] = {}
     first_error_shown = False
-    wanted = [int(p) for p in cards["productId"]]
-    for pid in wanted:
+    for pid in (int(p) for p in cards["productId"]):
         if pid in cached:
-            prices[pid] = cached[pid]
+            out[pid] = cached[pid]
             continue
         try:
             resp = session.get(f"{BASE_URL}/prices/{pid}", timeout=30)
             resp.raise_for_status()
-            v = _parse_price(resp.json())
-            if v:
-                prices[pid] = v
+            variant = _parse_variant(resp.json())
+            if variant:
+                market = variant.get("marketPrice") or variant.get("midPrice")
+                low = variant.get("lowPrice") or variant.get("directLowPrice") or market
+                out[pid] = (float(market) if market else None,
+                            float(low) if low else None)
             time.sleep(REQUEST_DELAY_S)
-        except Exception as err:  # noqa: BLE001 - diagnose the first failure loudly
+        except Exception as err:  # noqa: BLE001
             if not first_error_shown:
                 body = getattr(getattr(err, "response", None), "text", "")[:500]
                 print(f"  [tcgapis] request failed for productId {pid}: {err}\n"
                       f"  first response body: {body!r}")
                 first_error_shown = True
 
-    pd.DataFrame({"productId": list(prices), "price": list(prices.values())}) \
+    pd.DataFrame([{"productId": k, "market": v[0], "low": v[1]} for k, v in out.items()]) \
         .to_csv(cache_file, index=False)
-    return pd.Series([prices.get(int(pid)) for pid in cards["productId"]],
-                     index=cards.index, name="tcgplayer", dtype=float)
+    return pd.DataFrame({
+        "tcg_market": [out.get(int(p), (None, None))[0] for p in cards["productId"]],
+        "tcg_low": [out.get(int(p), (None, None))[1] for p in cards["productId"]],
+    }, index=cards.index)
+
+
+def fetch(cards: pd.DataFrame, cfg: dict, cache_dir: Path = Path("output/cache")) -> pd.Series:
+    table = fetch_table(cards, cache_dir)
+    return table["tcg_market"].rename("tcgplayer")
