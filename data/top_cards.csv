@@ -99,3 +99,103 @@ rank,productId,name,set,category,units,transactions,gmv_sale,avg_price
 98,689922,Beseech the Mirror,Secret Lair Drop Series,Mythic,667,569,15919.53,23.86736131934033
 99,679072,Trouble in Pairs (Borderless),Teenage Mutant Ninja Turtles Source Material,Mythic,1011,951,15861.39,15.688813056379821
 100,696351,The Ten Rings (Borderless),Marvel Super Heroes,Mythic,906,828,15827.88,17.470066225165564
+101,532918,Thundering Falls,Murders at Karlov Manor,Rare,999,884,15796.25,15.812062062062061
+102,656703,Hallowed Fountain,Lorwyn Eclipsed,Rare,1893,1567,15730.04,8.309582673005812
+103,92829,Polluted Delta,Khans of Tarkir,Rare,784,586,15719.01,20.049757653061224
+104,686543,Grave Researcher,Secrets of Strixhaven,Rare,4095,3398,15607.6,3.8113797313797315
+105,675585,"Lorehold, the Historian (Borderless)",Secrets of Strixhaven,Mythic,793,780,15574.15,19.63953341740227
+106,3360,Ashnod's Altar,Chronicles,Common,1160,1083,15483.25,13.347629310344828
+107,475562,Swamp (Phyrexian) - Full Art (Oil Slick Raised Foil),Phyrexia: All Will Be One,Land,953,393,15466.65,16.2294333683106
+108,552309,"Ulamog, the Defiler",Modern Horizons 3,Mythic,985,914,15453.05,15.688375634517765
+109,697024,Hex Magic,Marvel Super Heroes,Uncommon,7470,2827,15453.01,2.0686760374832662
+110,675591,Stock Up,Secrets of Strixhaven: Mystical Archive,Uncommon,6551,3646,15411.32,2.352514119981682
+111,558342,"Maha, Its Feathers Night",Bloomburrow,Mythic,701,656,15391.81,21.956932952924394
+112,556327,"Excalibur, Sword of Eden",Universes Beyond: Assassin's Creed,Rare,1292,1060,15383.67,11.9068653250774
+113,688522,Flashback (Extended Art),Secrets of Strixhaven,Rare,1275,1157,15377.9,12.061098039215686
+114,688652,Erode (Extended Art),Secrets of Strixhaven,Rare,1255,1074,15362.96,12.241402390438246
+115,651332,Norman Osborn,Marvel's Spider-Man,Mythic,1709,1543,15357.81,8.986430661205382
+116,532905,Undercity Sewers,Murders at Karlov Manor,Rare,896,743,15354.25,17.136439732142858
+117,689052,Scheming Silvertongue,Secrets of Strixhaven,Rare,3382,2582,15267.57,4.514361324659965
+118,634431,Genji Glove,FINAL FANTASY,Rare,2421,2232,15200.67,6.278674101610904
+119,552320,Jet Medallion,Modern Horizons 3,Rare,1432,1365,15068.48,10.52268156424581
+120,696388,"Iron Man, Bleeding Edge",Commander: Marvel Super Heroes,Rare,1066,1048,15019.6,14.08968105065666
+121,696279,Tony Stark,Marvel Super Heroes,Mythic,1855,1688,14961.39,8.06543935309973
+122,671067,Bloom Tender,Lorwyn Eclipsed,Mythic,1176,1091,14912.87,12.681011904761906
+123,656844,Paradise Chocobo - Birds of Paradise (Borderless),Commander: FINAL FANTASY,Promo,914,818,14884.07,16.284540481400438
+124,578886,Overlord of the Balemurk,Duskmourn: House of Horror,Mythic,694,508,14859.11,21.410821325648417
+125,668572,Namor the Sub-Mariner,Marvel Super Heroes,Mythic,2244,1647,14738.72,6.568057040998217
+126,688951,Decorum Dissertation (Borderless),Secrets of Strixhaven,Mythic,911,868,14690.68,16.12588364434687
+127,697067,"Shang-Chi, Master of Kung Fu (Borderless) (0370)",Marvel Super Heroes,Mythic,753,720,14675.64,19.489561752988045
+128,688470,Psychic Frog,Game Day & Store Championship Promos,Promo,874,481,14651.88,16.7641647597254
+129,689364,Triumph of the Hordes,Secrets of Strixhaven: Mystical Archive,Mythic,942,920,14636.01,15.537165605095542
+130,4815,Mystic Remora,Ice Age,Common,1629,1453,14616.86,8.972903621853899
+131,689108,Germination Practicum (Borderless),Secrets of Strixhaven,Mythic,876,855,14477.94,16.52732876712329
+132,688831,Ad Nauseam,Secrets of Strixhaven: Mystical Archive,Mythic,985,964,14427.72,14.647431472081218
+133,686657,Sol Ring (Borderless),Commander: Secrets of Strixhaven,Promo,604,580,14372.96,23.796291390728474
+134,534084,Slime Against Humanity,Murders at Karlov Manor,Common,7730,1336,14356.13,1.8571966364812418
+135,499755,Heroic Intervention,Commander: The Lord of the Rings: Tales of Middle-earth,Rare,978,936,14342.14,14.664764826175869
+136,221923,Roiling Vortex,Zendikar Rising,Rare,1050,678,14275.88,13.59607619047619
+137,688477,Resonating Lute,Secrets of Strixhaven,Rare,3863,3102,14264.78,3.6926689101734405
+138,187187,Bolas's Citadel,War of the Spark,Rare,859,838,14222.38,16.556903376018624
+139,221774,Valakut Awakening,Zendikar Rising,Rare,894,826,14196.16,15.879373601789709
+140,656713,Temple Garden,Lorwyn Eclipsed,Rare,1872,1582,14108.55,7.53661858974359
+141,552814,Vexing Bauble,Modern Horizons 3,Uncommon,4655,2470,14060.59,3.020534908700322
+142,679801,Utrom Monitor,Commander: Teenage Mutant Ninja Turtles,Common,2233,613,14046.36,6.2903537841468875
+143,552840,Consign to Memory,Modern Horizons 3,Uncommon,3676,1809,14039.22,3.819156692056583
+144,541369,"Lumra, Bellow of the Woods",Bloomburrow,Mythic,634,614,14020.36,22.114132492113566
+145,638913,Stomping Ground,Edge of Eternities,Rare,1903,1665,14018.03,7.366279558591698
+146,696355,Hidden Lair,Marvel Super Heroes,Rare,3431,1918,13950.19,4.0659253861847855
+147,686574,Shattered Sanctum,Secrets of Strixhaven,Rare,3199,2387,13881.45,4.339309159112223
+148,656705,Hallowed Fountain (Borderless),Lorwyn Eclipsed,Rare,917,807,13790.81,15.039051254089422
+149,92830,Bloodstained Mire,Khans of Tarkir,Rare,753,611,13761.13,18.275073041168657
+150,642791,Swan Song,Commander: Edge of Eternities,Rare,1662,1346,13681.02,8.231660649819494
+151,643049,"Evendo, Waking Haven",Edge of Eternities,Mythic,950,888,13658.47,14.377336842105262
+152,556324,Brotherhood Regalia,Universes Beyond: Assassin's Creed,Uncommon,1705,1543,13653.84,8.008117302052787
+153,687665,Fabled Passage,Commander: Secrets of Strixhaven,Rare,8855,3367,13574.05,1.5329249011857706
+154,576504,Untimely Malfunction,Duskmourn: House of Horror,Uncommon,2025,1806,13549.56,6.691140740740741
+155,696944,"Black Widow, Agile Avenger",Commander: Marvel Super Heroes,Rare,967,795,13532.89,13.994715615305067
+156,687486,Reliquary Tower,Commander: Secrets of Strixhaven,Uncommon,3568,2451,13527.73,3.7914041479820626
+157,687605,Turbulent Wilderness,Commander: Secrets of Strixhaven,Rare,1538,1105,13502.26,8.779102730819245
+158,696352,Dark Fortress,Marvel Super Heroes,Rare,3487,2006,13484.64,3.8671178663607684
+159,6150,Caltrops,Urza's Destiny,Uncommon,1123,944,13379.25,11.913846838824577
+160,656697,Blood Crypt (Borderless),Lorwyn Eclipsed,Rare,849,774,13373.76,15.752367491166078
+161,525710,Charismatic Conqueror,Commander: The Lost Caverns of Ixalan,Rare,664,612,13366.75,20.130647590361445
+162,548589,Ugin's Labyrinth,Modern Horizons 3,Mythic,1038,706,13339.06,12.85073217726397
+163,532910,Underground Mortuary,Murders at Karlov Manor,Rare,866,787,13300.08,15.358060046189376
+164,92831,Wooded Foothills,Khans of Tarkir,Rare,742,599,13296.08,17.919245283018867
+165,686618,"Silverquill, the Disputant (Borderless)",Secrets of Strixhaven,Mythic,786,767,13256.04,16.86519083969466
+166,697073,Iron Man Armor,Marvel Super Heroes,Mythic,2076,1640,13206.53,6.361526974951831
+167,552839,Kozilek's Command,Modern Horizons 3,Rare,2136,1389,13192.61,6.176315543071161
+168,4848,Pyroblast,Ice Age,Common,1811,1058,13152.83,7.262744340143567
+169,656710,Overgrown Tomb (Borderless),Lorwyn Eclipsed,Rare,836,763,13102.04,15.672296650717705
+170,553264,Arena of Glory,Modern Horizons 3,Rare,1438,1181,13089.17,9.102343532684284
+171,696432,"Iron Man, Titan of Innovation (Borderless)",Marvel Universe Eternal-Legal,Mythic,854,831,12913.76,15.121498829039814
+172,226314,Opposition Agent,Commander Legends,Rare,563,542,12877.88,22.87367673179396
+173,522937,Nuka-Cola Vending Machine,Universes Beyond: Fallout,Uncommon,627,601,12839.97,20.478421052631578
+174,552336,Witch Enchanter,Modern Horizons 3,Uncommon,3480,2372,12811.24,3.6813908045977013
+175,631529,Sphere Grid,Commander: FINAL FANTASY,Rare,1376,1228,12809.91,9.30952761627907
+176,555973,Black Market Connections,Universes Beyond: Assassin's Creed,Rare,697,682,12798.94,18.362898134863702
+177,688681,Emeritus of Abundance,Secrets of Strixhaven,Mythic,2195,1929,12643.18,5.7599908883826885
+178,687343,Goldspan Dragon,Commander: Secrets of Strixhaven,Mythic,2075,1634,12565.39,6.055609638554216
+179,553219,"Yavimaya, Cradle of Growth",Commander: Modern Horizons 3,Rare,823,792,12534.51,15.230267314702308
+180,14311,Ophidian Eye,Time Spiral,Common,881,864,12496.56,14.184517593643585
+181,646553,Spectacular Spider-Man (Borderless),Marvel's Spider-Man,Rare,2006,1808,12449.0,6.205882352941177
+182,11423,Seething Song,Mirrodin,Common,1162,1021,12428.46,10.695748709122203
+183,662801,Abandoned Air Temple,Avatar: The Last Airbender,Rare,1805,1514,12387.75,6.863019390581718
+184,686622,Emeritus of Ideation (Extended Art),Secrets of Strixhaven,Mythic,621,570,12350.16,19.88753623188406
+185,632635,Summon: Knights of Round,FINAL FANTASY,Mythic,905,868,12332.1,13.626629834254144
+186,686614,Professor Dellian Fel (Borderless),Secrets of Strixhaven,Mythic,799,725,12298.96,15.392941176470588
+187,614178,The Aetherspark,Aetherdrift,Mythic,619,593,12208.13,19.722342487883683
+188,539629,"Codsworth, Handy Helper",Universes Beyond: Fallout,Rare,524,513,12184.93,23.25368320610687
+189,575095,"Valgavoth, Harrower of Souls (Borderless)",Commander: Duskmourn: House of Horror,Mythic,679,632,12154.34,17.900353460972017
+190,679213,Raph's Jitte - Umezawa's Jitte (Borderless),Teenage Mutant Ninja Turtles Source Material,Mythic,1465,1127,12124.14,8.275863481228669
+191,696338,"Thanos, the Mad Titan (Borderless) (0376)",Marvel Super Heroes,Mythic,718,706,12063.18,16.80108635097493
+192,656714,Temple Garden (Borderless),Lorwyn Eclipsed,Rare,897,796,11981.59,13.357402452619844
+193,696354,Gleaming Bastion,Marvel Super Heroes,Rare,3468,1939,11945.56,3.4445098039215685
+194,696570,"Mole Man, Moloid Master",Marvel Super Heroes,Rare,4722,2574,11939.48,2.5284794578568404
+195,623877,Voice of Victory (Borderless),Tarkir: Dragonstorm,Rare,505,450,11899.45,23.563267326732674
+196,686603,"Quandrix, the Proof",Secrets of Strixhaven,Mythic,2013,1835,11897.94,5.910551415797317
+197,631106,Tataru Taru,Commander: FINAL FANTASY,Rare,1887,1088,11886.64,6.299226285108638
+198,660549,The Legend of Roku,Avatar: The Last Airbender,Mythic,1050,896,11828.85,11.265571428571429
+199,688919,Pyretic Ritual,Secrets of Strixhaven: Mystical Archive,Rare,1565,1465,11796.82,7.537904153354632
+200,686612,Witherbloom Charm,Secrets of Strixhaven,Uncommon,3312,1847,11731.22,3.5420350241545893

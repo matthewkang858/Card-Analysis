@@ -79,6 +79,20 @@ def cmd_mc(cfg: dict, args):
               f"{r.manapool_gap_p90:+5.1f}]")
 
 
+def cmd_single(cfg: dict, args):
+    if args.top:
+        cfg["ranking"]["top_n"] = args.top
+    cards = cmd_rank(cfg, args)
+    prices = fetch_prices(cards, cfg, args.demo)
+
+    out_dir = Path(cfg["output_dir"])
+    out_dir.mkdir(parents=True, exist_ok=True)
+    suffix = "_demo" if args.demo else ""
+    chart = plot.plot_single_card(cards.join(prices), cfg,
+                                  out_dir / f"single_card_gap{suffix}.png")
+    print(f"\nWrote {chart}")
+
+
 def cmd_run(cfg: dict, args):
     cards = cmd_rank(cfg, args)
     prices = fetch_prices(cards, cfg, args.demo)
@@ -141,12 +155,19 @@ def main(argv=None):
     pm.add_argument("--demo", action="store_true")
     pm.add_argument("--samples", type=int, default=300, help="baskets per size")
 
+    ps = sub.add_parser("single", help="single-card all-in cost gap per vendor")
+    ps.add_argument("--sales", default=DEFAULT_SALES)
+    ps.add_argument("--demo", action="store_true")
+    ps.add_argument("--top", type=int, default=None, help="override ranking.top_n")
+
     args = p.parse_args(argv)
     cfg = load_config(args.config)
     if args.command == "rank":
         cmd_rank(cfg, args)
     elif args.command == "mc":
         cmd_mc(cfg, args)
+    elif args.command == "single":
+        cmd_single(cfg, args)
     else:
         cmd_run(cfg, args)
 

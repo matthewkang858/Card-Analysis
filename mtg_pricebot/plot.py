@@ -6,6 +6,7 @@ import matplotlib
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
 
 from .basket import VENDORS
@@ -64,6 +65,69 @@ def plot_pct_diff(curves: pd.DataFrame, crossovers: list[dict], out_path: Path,
         spine.set_color(GRID)
     ax.legend(loc="upper right", frameon=False, labelcolor=INK)
     ax.margins(x=0.12)
+
+    fig.tight_layout()
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(out_path, facecolor=SURFACE)
+    plt.close(fig)
+    return out_path
+
+
+def plot_single_card(merged: pd.DataFrame, cfg: dict, out_path: Path,
+                     baseline: str = "tcgplayer") -> Path:
+    """Per-card cost of buying ONE card at each vendor vs the baseline.
+
+    Dots = individual cards; lines = mean gap per $2 price bin. All-in cost:
+    the card's price plus that vendor's single-order shipping.
+    """
+    from .basket import flat_threshold_shipping
+
+    ck_cfg = cfg["vendors"]["cardkingdom"]["shipping"]
+    mp_cfg = cfg["vendors"]["manapool"]["shipping"]
+    tcg_cfg = cfg["vendors"]["tcgplayer"]["shipping"]
+
+    d = merged.dropna(subset=VENDORS).copy()
+    d["tcg_total"] = d["tcgplayer"] + d["tcgplayer"].apply(
+        lambda p: flat_threshold_shipping(p, tcg_cfg["seller_free_threshold"],
+                                          tcg_cfg["per_seller_fee"]))
+    d["ck_total"] = d["cardkingdom"] + d["cardkingdom"].apply(
+        lambda p: flat_threshold_shipping(p, ck_cfg["free_threshold"], ck_cfg["flat_fee"]))
+    d["mp_total"] = d["manapool"] + d["manapool"].apply(
+        lambda p: flat_threshold_shipping(p, mp_cfg["free_threshold"], mp_cfg["flat_fee"]))
+
+    fig, ax = plt.subplots(figsize=(8.5, 5.2), dpi=150)
+    fig.patch.set_facecolor(SURFACE)
+    ax.set_facecolor(SURFACE)
+
+    x = d["tcgplayer"]
+    ax.axhline(0, color=COLORS[baseline], linewidth=2)
+    ax.annotate(f"{LABELS[baseline]} (baseline)", (x.max(), 0),
+                xytext=(6, 5), textcoords="offset points",
+                color=COLORS[baseline], fontsize=9, fontweight="bold", va="bottom")
+
+    bins = np.arange(0, x.max() + 2, 2)
+    d["bin"] = pd.cut(d["tcgplayer"], bins)
+    for v, total_col in (("cardkingdom", "ck_total"), ("manapool", "mp_total")):
+        gap = (d[total_col] / d["tcg_total"] - 1) * 100
+        ax.scatter(x, gap, s=14, color=COLORS[v], alpha=0.3, linewidths=0)
+        binned = gap.groupby(d["bin"], observed=True).mean()
+        centers = [iv.mid for iv in binned.index]
+        ax.plot(centers, binned.values, color=COLORS[v], linewidth=2, label=LABELS[v])
+        ax.annotate(LABELS[v], (centers[-1], binned.values[-1]),
+                    xytext=(6, 0), textcoords="offset points",
+                    color=COLORS[v], fontsize=9, fontweight="bold", va="center")
+
+    ax.set_xlabel(f"Card price on {LABELS[baseline]} ($)", color=MUTED)
+    ax.set_ylabel(f"Extra all-in cost vs {LABELS[baseline]} (%)", color=MUTED)
+    ax.set_title("Buying a single card: total cost (card + shipping) vs TCGplayer\n"
+                 "Dots = individual cards; lines = mean per $2 price bin",
+                 color=INK, fontsize=11)
+    ax.grid(True, color=GRID, linewidth=0.75)
+    ax.tick_params(colors=MUTED)
+    for spine in ax.spines.values():
+        spine.set_color(GRID)
+    ax.legend(loc="upper right", frameon=False, labelcolor=INK)
+    ax.margins(x=0.1)
 
     fig.tight_layout()
     out_path.parent.mkdir(parents=True, exist_ok=True)
