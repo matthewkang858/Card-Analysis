@@ -111,7 +111,6 @@ def plot_single_card(merged: pd.DataFrame, cfg: dict, out_path: Path) -> Path:
     d["bin"] = pd.cut(d["tcgplayer"], bins)
     for v, total_col in (("cardkingdom", "ck_total"), ("manapool", "mp_total")):
         gap = (d[total_col] / d["tcg_total"] - 1) * 100
-        ax.scatter(x, gap, s=14, color=COLORS[v], alpha=0.3, linewidths=0)
         binned = gap.groupby(d["bin"], observed=True).mean().dropna()
         centers = [iv.mid for iv in binned.index]
         ax.plot(centers, binned.values, color=COLORS[v], linewidth=2, label=LABELS[v])
@@ -120,12 +119,12 @@ def plot_single_card(merged: pd.DataFrame, cfg: dict, out_path: Path) -> Path:
                     color=COLORS[v], fontsize=9, fontweight="bold", va="center")
 
     ax.set_xscale("log")
-    ax.set_xticks([1, 2, 5, 10, 25, 50, 100, 250, 500])
+    ax.set_xticks([1, 2, 5, 10, 25, 50, 100, 250, 500, 1000])
     ax.get_xaxis().set_major_formatter(matplotlib.ticker.StrMethodFormatter("${x:,.0f}"))
     ax.set_xlabel("Card price on TCGplayer ($, log scale)", color=MUTED)
     ax.set_ylabel("Extra all-in cost vs TCGplayer (%)", color=MUTED)
     ax.set_title("Buying a single card: total cost (card + shipping) vs TCGplayer\n"
-                 "Dots = individual cards; lines = mean per log-spaced price bin",
+                 "Lines = mean gap per log-spaced price bin",
                  color=INK, fontsize=11)
     ax.grid(True, color=GRID, linewidth=0.75)
     ax.tick_params(colors=MUTED)
