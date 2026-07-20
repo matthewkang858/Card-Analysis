@@ -73,6 +73,46 @@ def plot_pct_diff(curves: pd.DataFrame, crossovers: list[dict], out_path: Path,
     return out_path
 
 
+def plot_win_rate(mc: pd.DataFrame, out_path: Path, n_samples: int,
+                  baseline: str = "tcgplayer") -> Path:
+    """P(vendor basket is cheaper than the baseline basket) by basket size."""
+    fig, ax = plt.subplots(figsize=(8.5, 5.2), dpi=150)
+    fig.patch.set_facecolor(SURFACE)
+    ax.set_facecolor(SURFACE)
+
+    x = mc["n_cards"]
+    ax.axhline(50, color=MUTED, linewidth=1, linestyle="--", alpha=0.8)
+    ax.annotate("coin flip (50%)", (x.iloc[-1], 50), xytext=(6, 0),
+                textcoords="offset points", color=MUTED, fontsize=8, va="center")
+
+    for v in VENDORS:
+        if v == baseline:
+            continue
+        ax.plot(x, mc[f"{v}_win_rate"], color=COLORS[v], linewidth=2, label=LABELS[v])
+        ax.annotate(LABELS[v], (x.iloc[-1], mc[f"{v}_win_rate"].iloc[-1]),
+                    xytext=(6, 0), textcoords="offset points",
+                    color=COLORS[v], fontsize=9, fontweight="bold", va="center")
+
+    ax.set_ylim(-3, 103)
+    ax.set_xlabel("Cards in basket", color=MUTED)
+    ax.set_ylabel(f"Baskets cheaper than {LABELS[baseline]} (%)", color=MUTED)
+    ax.set_title(f"How often does each vendor beat {LABELS[baseline]} all-in?\n"
+                 f"{n_samples} sampled baskets per size, weighted by real demand",
+                 color=INK, fontsize=11)
+    ax.grid(True, color=GRID, linewidth=0.75)
+    ax.tick_params(colors=MUTED)
+    for spine in ax.spines.values():
+        spine.set_color(GRID)
+    ax.legend(loc="lower right", frameon=False, labelcolor=INK)
+    ax.margins(x=0.12)
+
+    fig.tight_layout()
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(out_path, facecolor=SURFACE)
+    plt.close(fig)
+    return out_path
+
+
 def plot_single_card(merged: pd.DataFrame, cfg: dict, out_path: Path) -> Path:
     """Absolute all-in cost of buying ONE card at each vendor.
 

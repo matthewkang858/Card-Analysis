@@ -30,6 +30,7 @@ def simulate(cards: pd.DataFrame, prices: pd.DataFrame, cfg: dict,
         # Past ~30 cards every curve is flat (shipping is fully amortized),
         # so the default stops there and keeps the interesting region readable.
         sizes = list(range(1, min(len(pool) - 1, 30) + 1))
+    sizes = [n for n in sizes if n < len(pool)]
 
     ck_cfg = cfg["vendors"]["cardkingdom"]["shipping"]
     mp_cfg = cfg["vendors"]["manapool"]["shipping"]
@@ -70,5 +71,7 @@ def simulate(cards: pd.DataFrame, prices: pd.DataFrame, cfg: dict,
             row[f"{v}_gap_p10"] = float(np.percentile(g, 10))
             row[f"{v}_gap_p90"] = float(np.percentile(g, 90))
             row[f"{v}_subgap_mean"] = float(np.mean(subgaps[v]))
+            # Win rate: share of sampled baskets this vendor beats the baseline
+            row[f"{v}_win_rate"] = float((g < 0).mean() * 100)
         rows.append(row)
     return pd.DataFrame(rows)

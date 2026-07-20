@@ -58,19 +58,31 @@ def fetch_prices(cards: pd.DataFrame, cfg: dict, use_demo: bool) -> pd.DataFrame
 
 
 def cmd_mc(cfg: dict, args):
-    cards = cmd_rank(cfg, args)
-    prices = fetch_prices(cards, cfg, args.demo)
+    if args.priced_pool:
+        # Pre-priced pool CSV: name, units (sampling weight), and one price
+        # column per vendor. Skips ranking and fetching entirely.
+        pool = pd.read_csv(args.priced_pool)
+        cards = pool.drop(columns=[v for v in basket.VENDORS if v in pool])
+        prices = pool[[v for v in basket.VENDORS]]
+        print(f"Using pre-priced pool {args.priced_pool} ({len(pool)} cards)")
+    else:
+        cards = cmd_rank(cfg, args)
+        prices = fetch_prices(cards, cfg, args.demo)
 
+    sizes = list(range(1, args.max_cards + 1)) if args.max_cards else None
     print(f"Sampling {args.samples} baskets per size (weighted by units sold) ...")
-    mc = montecarlo.simulate(cards, prices, cfg, n_samples=args.samples)
+    mc = montecarlo.simulate(cards, prices, cfg, sizes=sizes, n_samples=args.samples)
 
     out_dir = Path(cfg["output_dir"])
     out_dir.mkdir(parents=True, exist_ok=True)
     suffix = "_demo" if args.demo else ""
-    mc_path = out_dir / f"mc_gap{suffix}.csv"
+    pool_tag = "_deck" if args.priced_pool else ""
+    mc_path = out_dir / f"mc_gap{pool_tag}{suffix}.csv"
     mc.to_csv(mc_path, index=False)
-    chart = plot.plot_mc_band(mc, out_dir / f"mc_gap_chart{suffix}.png", args.samples)
-    print(f"\nWrote {mc_path}\nWrote {chart}\n")
+    chart = plot.plot_mc_band(mc, out_dir / f"mc_gap_chart{pool_tag}{suffix}.png", args.samples)
+    win_chart = plot.plot_win_rate(mc, out_dir / f"mc_win_rate{pool_tag}{suffix}.png",
+                                   args.samples)
+    print(f"\nWrote {mc_path}\nWrote {chart}\nWrote {win_chart}\n")
 
     print("=== Mean gap vs TCGplayer (10th-90th pct across baskets) ===")
     for n in (1, 3, 5, 10, 20, 50, mc["n_cards"].max()):
@@ -162,6 +174,11 @@ def main(argv=None):
     pm.add_argument("--sales", default=DEFAULT_SALES)
     pm.add_argument("--demo", action="store_true")
     pm.add_argument("--samples", type=int, default=300, help="baskets per size")
+    pm.add_argument("--priced-pool", default=None,
+                    help="CSV with name, units (weight), and per-vendor price columns; "
+                         "skips ranking/fetching")
+    pm.add_argument("--max-cards", type=int, default=None,
+                    help="largest basket size to simulate (default 30)")
 
     ps = sub.add_parser("single", help="single-card all-in cost gap per vendor")
     ps.add_argument("--sales", default=DEFAULT_SALES)
