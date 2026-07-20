@@ -32,9 +32,9 @@ Outputs land in `output/`:
 
 | File | What it is |
 |---|---|
-| `crossover_chart*.png` | The three cost curves + crossover markers (x = cards in basket) |
-| `crossover_zoom*.png` | Zoom on the first 25 cards, where shipping thresholds bite |
-| `crossover_by_value*.png` | Same curves with order value ($) on the x-axis |
+| `crossover_chart*.png` | % cost difference vs TCGplayer (0 = baseline, below = cheaper), x = cards in basket |
+| `crossover_zoom*.png` | Same % view zoomed on the first 25 cards, where shipping thresholds bite |
+| `crossover_by_value*.png` | Absolute all-in cost curves with order value ($) on the x-axis |
 | `basket_curves*.csv` | Every basket step: subtotal / shipping / total per vendor |
 | `data/top_cards.csv` | The ranked basket (from `rank` step) |
 

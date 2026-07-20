@@ -66,16 +66,15 @@ def cmd_run(cfg: dict, args):
 
     curves_path = out_dir / f"basket_curves{suffix}.csv"
     curves.to_csv(curves_path, index=False)
-    chart_path = plot.plot_curves(curves, crossovers, out_dir / f"crossover_chart{suffix}.png",
-                                  x_col="n_cards")
+    chart_path = plot.plot_pct_diff(curves, crossovers,
+                                    out_dir / f"crossover_chart{suffix}.png")
     chart_v_path = plot.plot_curves(curves, crossovers,
                                     out_dir / f"crossover_by_value{suffix}.png")
     # Zoomed view of the small-basket region where shipping thresholds bite.
     zoom = curves[curves["n_cards"] <= 25]
     if len(zoom) >= 3:
         zoom_events = [ev for ev in crossovers if ev["n_cards"] <= 25]
-        plot.plot_curves(zoom, zoom_events, out_dir / f"crossover_zoom{suffix}.png",
-                         x_col="n_cards")
+        plot.plot_pct_diff(zoom, zoom_events, out_dir / f"crossover_zoom{suffix}.png")
 
     print(f"\nWrote {curves_path}\nWrote {chart_path}\nWrote {chart_v_path}\n")
     print("=== Crossovers vs TCGplayer (all-in cost) ===")
