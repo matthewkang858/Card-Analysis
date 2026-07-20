@@ -1,0 +1,62 @@
+# ============================================================
+# MTG vendor price-crossover bot configuration
+# ============================================================
+# All shipping thresholds/fees below are ASSUMPTIONS you should
+# verify against each vendor's current policy before trusting the
+# crossover point. They are deliberately easy to edit here.
+
+ranking:
+  # "gmv"   = rank by dollar sales volume (recommended — what people spend money on)
+  # "units" = rank by unit sales volume (skews toward cheap bulk)
+  metric: gmv
+  top_n: 100
+  # Exclude products whose average sale price exceeds this (None = no cap).
+  # Keeps $1,500 reserved-list cards from dominating a "typical basket" and,
+  # importantly, lets the basket climb gradually through the $0-$150 range
+  # where the shipping-threshold crossovers actually happen.
+  max_avg_price: 25
+  # Minimum units sold to be considered (filters one-off outlier sales)
+  min_units: 10
+
+vendors:
+  cardkingdom:
+    # Public pricelist feed (documented at cardkingdom.com/developer)
+    pricelist_url: "https://api.cardkingdom.com/api/pricelist"
+    shipping:
+      free_threshold: 50.00   # ASSUMPTION: free US shipping at $50+; verify current CK policy
+      flat_fee: 4.99          # ASSUMPTION: typical sub-threshold US shipping cost
+
+  tcgplayer:
+    # tcgcsv.com mirrors TCGplayer's daily price feed, keyed by the same
+    # productId that appears in data/raw/mtg_results.xlsx. Magic category = 1.
+    tcgcsv_base: "https://tcgcsv.com/tcgplayer"
+    category_id: 1
+    # Which price column to use from the feed: lowPrice | marketPrice | midPrice
+    price_field: marketPrice
+    shipping:
+      # TCGplayer orders ship from many independent sellers. Without seller-level
+      # inventory we model consolidation: you can source ~cards_per_seller cards
+      # from one seller before needing another.
+      cards_per_seller: 8       # ASSUMPTION
+      per_seller_fee: 1.49      # ASSUMPTION: typical small-seller shipping
+      seller_free_threshold: 35.00  # ASSUMPTION: seller subtotal at which shipping is waived (TCG Direct-ish)
+
+  manapool:
+    # ManaPool has a public API — see https://manapool.com/api for docs & auth.
+    # Fill in credentials if their price endpoints require them.
+    api_base: "https://manapool.com/api/v1"
+    email: null          # X-ManaPool-Email header (if required)
+    access_token: null   # X-ManaPool-Access-Token header (if required)
+    shipping:
+      free_threshold: 50.00   # ASSUMPTION: verify ManaPool's current policy
+      flat_fee: 3.99          # ASSUMPTION
+
+demo:
+  # Demo mode synthesizes vendor prices so the pipeline runs with no network.
+  # TCGplayer price = actual average sale price from your sales data (gmv/units).
+  # Other vendors are modeled as multipliers on that real price.
+  cardkingdom_multiplier: 1.05   # CK premium on commander staples (hot cards run higher)
+  manapool_multiplier: 0.97      # ManaPool typically undercuts TCG market slightly
+  min_price: 0.25
+
+output_dir: output
