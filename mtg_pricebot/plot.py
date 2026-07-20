@@ -86,12 +86,12 @@ def plot_single_card(merged: pd.DataFrame, cfg: dict, out_path: Path) -> Path:
     tcg_cfg = cfg["vendors"]["tcgplayer"]["shipping"]
 
     d = merged.dropna(subset=VENDORS).copy()
-    d["tcgplayer_total"] = d["tcgplayer"] + d["tcgplayer"].apply(
+    d["tcg_total"] = d["tcgplayer"] + d["tcgplayer"].apply(
         lambda p: flat_threshold_shipping(p, tcg_cfg["seller_free_threshold"],
                                           tcg_cfg["per_seller_fee"]))
-    d["cardkingdom_total"] = d["cardkingdom"] + d["cardkingdom"].apply(
+    d["ck_total"] = d["cardkingdom"] + d["cardkingdom"].apply(
         lambda p: flat_threshold_shipping(p, ck_cfg["free_threshold"], ck_cfg["flat_fee"]))
-    d["manapool_total"] = d["manapool"] + d["manapool"].apply(
+    d["mp_total"] = d["manapool"] + d["manapool"].apply(
         lambda p: flat_threshold_shipping(p, mp_cfg["free_threshold"], mp_cfg["flat_fee"]))
 
     fig, ax = plt.subplots(figsize=(8.5, 5.2), dpi=150)
@@ -99,28 +99,39 @@ def plot_single_card(merged: pd.DataFrame, cfg: dict, out_path: Path) -> Path:
     ax.set_facecolor(SURFACE)
 
     x = d["tcgplayer"]
-    bins = np.arange(0, x.max() + 2, 2)
+    ax.axhline(0, color=COLORS["tcgplayer"], linewidth=2)
+    ax.annotate("TCGplayer (baseline)", (x.min(), 0),
+                xytext=(2, 5), textcoords="offset points",
+                color=COLORS["tcgplayer"], fontsize=9, fontweight="bold",
+                va="bottom", ha="left")
+
+    # Log-spaced bins: card prices span ~$1-$500, so linear bins would starve
+    # the cheap end where most cards (and the biggest gaps) live.
+    bins = np.geomspace(max(x.min() * 0.99, 0.1), x.max() * 1.01, 28)
     d["bin"] = pd.cut(d["tcgplayer"], bins)
-    for v in ("cardkingdom", "manapool", "tcgplayer"):
-        total = d[f"{v}_total"]
-        ax.scatter(x, total, s=14, color=COLORS[v], alpha=0.3, linewidths=0)
-        binned = total.groupby(d["bin"], observed=True).mean()
+    for v, total_col in (("cardkingdom", "ck_total"), ("manapool", "mp_total")):
+        gap = (d[total_col] / d["tcg_total"] - 1) * 100
+        ax.scatter(x, gap, s=14, color=COLORS[v], alpha=0.3, linewidths=0)
+        binned = gap.groupby(d["bin"], observed=True).mean().dropna()
         centers = [iv.mid for iv in binned.index]
         ax.plot(centers, binned.values, color=COLORS[v], linewidth=2, label=LABELS[v])
         ax.annotate(LABELS[v], (centers[-1], binned.values[-1]),
                     xytext=(6, 0), textcoords="offset points",
                     color=COLORS[v], fontsize=9, fontweight="bold", va="center")
 
-    ax.set_xlabel("Card price on TCGplayer ($)", color=MUTED)
-    ax.set_ylabel("Total cost to buy this one card ($)", color=MUTED)
-    ax.set_title("Buying a single card: all-in cost (card + shipping) by vendor\n"
-                 "Dots = individual cards; lines = mean per $2 price bin",
+    ax.set_xscale("log")
+    ax.set_xticks([1, 2, 5, 10, 25, 50, 100, 250, 500])
+    ax.get_xaxis().set_major_formatter(matplotlib.ticker.StrMethodFormatter("${x:,.0f}"))
+    ax.set_xlabel("Card price on TCGplayer ($, log scale)", color=MUTED)
+    ax.set_ylabel("Extra all-in cost vs TCGplayer (%)", color=MUTED)
+    ax.set_title("Buying a single card: total cost (card + shipping) vs TCGplayer\n"
+                 "Dots = individual cards; lines = mean per log-spaced price bin",
                  color=INK, fontsize=11)
     ax.grid(True, color=GRID, linewidth=0.75)
     ax.tick_params(colors=MUTED)
     for spine in ax.spines.values():
         spine.set_color(GRID)
-    ax.legend(loc="upper left", frameon=False, labelcolor=INK)
+    ax.legend(loc="upper right", frameon=False, labelcolor=INK)
     ax.margins(x=0.1)
 
     fig.tight_layout()

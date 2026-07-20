@@ -82,6 +82,8 @@ def cmd_mc(cfg: dict, args):
 def cmd_single(cfg: dict, args):
     if args.top:
         cfg["ranking"]["top_n"] = args.top
+    if args.max_price:
+        cfg["ranking"]["max_avg_price"] = args.max_price
     cards = cmd_rank(cfg, args)
     prices = fetch_prices(cards, cfg, args.demo)
 
@@ -159,6 +161,8 @@ def main(argv=None):
     ps.add_argument("--sales", default=DEFAULT_SALES)
     ps.add_argument("--demo", action="store_true")
     ps.add_argument("--top", type=int, default=None, help="override ranking.top_n")
+    ps.add_argument("--max-price", type=float, default=None,
+                    help="override ranking.max_avg_price (e.g. 500 for the wide view)")
 
     args = p.parse_args(argv)
     cfg = load_config(args.config)
