@@ -42,11 +42,12 @@ vendors:
     price_field: marketPrice
     shipping:
       # TCG Direct (primary seller) ships free once the cart clears the
-      # threshold; every other seller charges the flat per_seller_fee (max $5).
+      # threshold; every other seller charges per_seller_fee. Fee is the blend
+      # of sellers who set $5 and sellers who set $1.49 minimums: (5+1.49)/2.
       # cards_per_seller calibrated so full-deck TCG shipping matches the
-      # real-cart study (~$20 Standard / ~$25 Commander per ~100-card deck).
-      cards_per_seller: 20      # calibrated to real-cart TCG shipping
-      per_seller_fee: 5.00      # non-Direct sellers: flat fee, max $5
+      # real-cart study (~$20 Standard per ~100-card deck).
+      cards_per_seller: 14      # calibrated (with blended fee) to real-cart TCG shipping
+      per_seller_fee: 3.25      # blended: half sellers $5, half $1.49
       seller_free_threshold: 50.00  # TCG Direct free-shipping threshold
 
   manapool:
