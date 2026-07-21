@@ -46,7 +46,7 @@ vendors:
       # of sellers who set $5 and sellers who set $1.49 minimums: (5+1.49)/2.
       # cards_per_seller calibrated so full-deck TCG shipping matches the
       # real-cart study (~$20 Standard per ~100-card deck).
-      cards_per_seller: 14      # calibrated (with blended fee) to real-cart TCG shipping
+      cards_per_seller: 9       # ~$30 TCG shipping on a full deck (mild fragmentation)
       per_seller_fee: 3.25      # blended: half sellers $5, half $1.49
       seller_free_threshold: 50.00  # TCG Direct free-shipping threshold
 
