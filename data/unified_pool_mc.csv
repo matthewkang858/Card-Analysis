@@ -1,0 +1,1021 @@
+name,units,tcgplayer,cardkingdom,manapool
+Shock,2,0.04,0.35,0.15
+Essence Scatter,3,0.06,0.35,0.15
+Cancel,2,0.06,0.35,0.15
+Axgard Cavalry,1,0.07,0.39,0.15
+Duress,19,0.07,0.39,0.15
+Flashfreeze,19,0.09,0.39,0.15
+Disdainful Stroke,16,0.1,0.39,0.15
+Emerald Charm,1,0.1,0.35,0.15
+Deathmark,1,0.1,0.35,0.15
+Snakeskin Veil,4,0.12,0.39,0.15
+Negate,6,0.12,0.35,0.15
+Sudden Shock,1,0.13,0.35,0.15
+Dimir House Guard,1,0.13,0.35,0.15
+Opt,11,0.14,0.35,0.15
+Dead // Gone,1,0.14,0.35,0.15
+Skycrash,1,0.15,0.35,0.15
+Three Tree Mascot,1,0.15,0.35,0.15
+"Tetsuko Umezawa, Fugitive",1,0.15,0.35,0.15
+Wingcrafter,1,0.16,0.35,0.15
+Impulsive Pilferer,1,0.16,0.39,0.15
+"Tigra, Feline Fury",2,0.16,0.35,0.15
+Flywheel Racer,1,0.16,0.35,0.15
+Crumbling Vestige,1,0.16,0.35,0.15
+Wild Slash,1,0.17,0.39,0.15
+Heartless Act,1,0.17,0.35,0.15
+Burst Lightning,15,0.17,0.35,0.15
+Mishra's Factory,1,0.17,0.39,0.15
+Basking Broodscale,1,0.17,0.35,0.15
+Young Wolf,1,0.17,0.35,0.15
+Mardu Devotee,1,0.18,0.35,0.15
+We Say Thee Nay!,2,0.18,0.35,0.15
+"Rishkar, Peema Renegade",1,0.18,0.69,0.16
+Abrade,2,0.18,0.35,0.15
+Dragonfly Swarm,4,0.18,0.35,0.15
+Annul,8,0.19,0.35,0.15
+Plundering Barbarian,1,0.19,0.35,0.15
+Raven Eagle,2,0.19,0.49,0.15
+"Dargo, the Shipwrecker",1,0.19,0.35,0.15
+Maelstrom Pulse,2,0.19,0.49,0.15
+Dispelling Exhale,5,0.19,0.35,0.15
+Claim the Firstborn,1,0.19,0.35,0.15
+Pyroclasm,5,0.2,0.39,0.18
+Barkform Harvester,1,0.2,0.35,0.15
+Light Up the Stage,1,0.2,0.69,0.16
+"Oroku Saki, Shredder Rising",3,0.2,0.35,0.15
+Town Greeter,4,0.2,0.35,0.15
+Death to Our Enemies,3,0.2,0.35,0.15
+Skirmish Rhino,1,0.2,0.35,0.15
+Octopus Form,3,0.2,0.35,0.15
+Mogg Salvage,1,0.2,0.35,0.15
+It'll Quench Ya!,7,0.2,0.35,0.15
+Scavenging Ooze,2,0.21,0.49,0.15
+Chromatic Star,2,0.21,0.35,0.15
+Divert Disaster,1,0.21,0.35,0.15
+Shao Jun,1,0.21,0.35,0.15
+Auratouched Mage,1,0.21,0.35,0.15
+Flamebraider,4,0.21,0.35,0.15
+Send in the Pest,1,0.21,0.35,0.15
+Soul-Guide Lantern,10,0.21,0.59,0.15
+Spell Pierce,9,0.21,0.35,0.19
+Wall of Roots,1,0.22,0.49,0.17
+Glamer Gifter,1,0.22,0.35,0.15
+Unstable Amulet,1,0.22,0.35,0.15
+Dust Animus,2,0.22,0.49,0.15
+Wild Cantor,1,0.22,0.35,0.15
+Exotic Orchard,11,0.23,0.59,0.15
+"Sanar, Unfinished Genius",4,0.23,0.35,0.15
+Holdout Settlement,1,0.23,0.49,0.15
+Swallowed by Leviathan,1,0.23,0.35,0.15
+Pyrrhic Strike,1,0.23,0.35,0.15
+Cloud of Faeries,2,0.23,0.59,0.15
+Broodspinner,4,0.23,0.35,0.15
+Angrath's Marauders,1,0.23,0.69,0.15
+Secret Identity,1,0.23,0.49,0.15
+Dwarven Scorcher,1,0.24,0.39,0.16
+Feed the Cycle,1,0.24,0.35,0.15
+Bushwhack,2,0.24,0.59,0.15
+Witherbloom Charm,4,0.24,0.35,0.15
+Combustion Technique,11,0.24,0.35,0.15
+Firebending Lesson,13,0.24,0.35,0.15
+Phyrexian Revoker,1,0.24,0.59,0.21
+"Dyadrine, Synthesis Amalgam",2,0.24,0.49,0.22
+Subterranean Schooner,1,0.24,0.49,0.21
+Gene Pollinator,3,0.24,0.35,0.15
+Twinshot Sniper,1,0.25,0.35,0.15
+Command Tower,22,0.25,0.69,0.23
+Demolition Field,1,0.25,0.49,0.15
+Spire of Industry,2,0.25,0.79,0.23
+White Lotus Hideout,2,0.25,0.35,0.15
+Pick Your Poison,2,0.25,0.35,0.15
+Ornithopter,2,0.25,0.69,0.26
+Drift of Phantasms,1,0.25,0.79,0.23
+Lightning Helix,2,0.25,0.39,0.15
+Stalactite Dagger,1,0.26,0.35,0.15
+Gingerbrute,2,0.26,0.69,0.2
+Reap and Sow,1,0.26,0.35,0.18
+"Felothar, Dawn of the Abzan",1,0.26,0.49,0.19
+Iron-Shield Elf,4,0.26,0.35,0.15
+Peregrine Drake,1,0.26,0.79,0.15
+Consign // Oblivion,1,0.26,0.35,0.15
+Skyclave Apparition,2,0.26,0.59,0.15
+Origin of Metalbending,2,0.27,0.35,0.15
+Impractical Joke,5,0.27,0.35,0.15
+Lost in the Maze,2,0.27,0.49,0.15
+Escape Tunnel,6,0.27,0.35,0.15
+Bounce Off,4,0.27,0.35,0.15
+Ancient Vendetta,4,0.27,0.35,0.15
+"Quicksilver, Brash Blur",5,0.27,0.49,0.15
+Prismari Charm,8,0.27,0.35,0.15
+Liberated Dwarf,1,0.27,0.35,0.19
+Llanowar Elves,19,0.27,0.69,0.23
+"Malcolm, Keen-Eyed Navigator",1,0.27,0.49,0.15
+Key to the City,1,0.27,0.49,0.15
+Secluded Courtyard,4,0.28,0.39,0.15
+Vibrant Outburst,1,0.28,0.35,0.15
+Battlefield Forge,1,0.28,0.69,0.15
+Mind Stone,1,0.28,0.79,0.26
+Omni-Changeling,1,0.28,0.35,0.15
+Stitcher's Supplier,1,0.28,0.79,0.15
+Gumdrop Poisoner,1,0.28,0.49,0.15
+Loyal Apprentice,1,0.28,0.49,0.19
+Grapeshot,1,0.28,0.69,0.15
+Dwarven Grunt,1,0.28,0.39,0.25
+Barbarian Ring,1,0.28,0.49,0.15
+Strangleroot Geist,1,0.28,0.35,0.15
+Trickery Charm,1,0.28,0.59,0.19
+Swamp,46,0.28,0.49,0.15
+The Huntsman's Redemption,4,0.29,0.49,0.27
+"Zhao, the Moon Slayer",2,0.29,0.49,0.15
+Zoyowa's Justice,1,0.29,0.35,0.15
+Kishla Village,1,0.29,0.49,0.15
+Full Bore,4,0.29,0.35,0.15
+Tax Collector,1,0.29,0.59,0.15
+Bloodfire Dwarf,1,0.29,0.39,0.22
+Retraction Helix,1,0.29,0.35,0.15
+Skirge Familiar,1,0.29,0.99,0.15
+Hidden Strings,1,0.3,0.59,0.15
+Iroh's Demonstration,3,0.3,0.35,0.15
+Meltstrider's Resolve,6,0.3,0.39,0.15
+Mirage Mirror,1,0.3,0.49,0.15
+Dredger's Insight,4,0.3,0.99,0.15
+Volatile Fault,1,0.3,0.35,0.15
+Promising Vein,1,0.3,0.35,0.15
+Opulent Palace,1,0.3,0.69,0.15
+Rakshasa's Bargain,4,0.3,0.35,0.15
+Stingerback Terror,2,0.3,0.49,0.15
+Reckless Handling,1,0.3,0.59,0.15
+Sleight of Hand,8,0.3,0.35,0.15
+Divergent Transformations,1,0.31,0.69,0.32
+Transmogrify,1,0.31,0.49,0.17
+Tavern Scoundrel,1,0.31,0.35,0.15
+Shivan Reef,1,0.31,0.79,0.28
+Talisman of Progress,1,0.31,0.99,0.27
+No More Lies,6,0.31,0.79,0.15
+Dispel,5,0.31,0.39,0.18
+Abandon Attachments,9,0.31,0.49,0.15
+Conduit Pylons,1,0.31,0.69,0.15
+Sear,13,0.31,0.35,0.15
+Havenwood Battleground,1,0.32,0.79,0.37
+"Chainer, Dementia Master",1,0.32,0.49,0.15
+Chaos Warp,1,0.32,0.79,0.29
+"Vaan, Street Thief",1,0.32,0.49,0.15
+Starfield Shepherd,4,0.32,0.69,0.15
+Siren Stormtamer,1,0.32,1.29,0.32
+Skycoach Conductor,4,0.32,0.49,0.15
+Vision Quest,1,0.32,0.49,0.15
+Anointed Peacekeeper,1,0.32,0.49,0.15
+Gran-Gran,12,0.32,0.35,0.15
+Together as One,1,0.32,0.49,0.15
+"Mister Fantastic, Reed Richards",1,0.32,0.39,0.15
+Confounding Conundrum,1,0.32,0.49,0.15
+Sylvan Scrying,1,0.32,0.59,0.15
+"Lena, Selfless Champion",1,0.33,1.29,0.31
+Requisition Raid,2,0.33,0.35,0.15
+Enslaved Dwarf,1,0.33,0.35,0.18
+Unlicensed Hearse,1,0.33,0.99,0.15
+Ill-Timed Explosion,7,0.33,0.49,0.15
+"Smellerbee, Rebel Fighter",1,0.33,0.69,0.2
+Hired Claw,4,0.33,0.69,0.15
+Broadside Barrage,1,0.33,0.59,0.15
+Get Out,3,0.34,0.49,0.15
+Daydream,4,0.34,0.35,0.15
+March of Wretched Sorrow,1,0.34,0.49,0.15
+Extravagant Replication,1,0.34,0.69,0.15
+Bitter Triumph,9,0.34,0.35,0.15
+Rosie Cotton of South Lane,1,0.34,0.39,0.15
+Accumulate Wisdom,12,0.34,0.69,0.15
+Dwarven Trader,1,0.34,0.39,0.15
+Yavimaya Coast,2,0.34,0.99,0.28
+Survivors' Encampment,1,0.34,1.49,0.48
+Springleaf Drum,14,0.35,0.99,0.26
+The Mycosynth Gardens,2,0.35,0.99,0.35
+Nova Hellkite,4,0.35,0.49,0.15
+Asmodeus the Archfiend,1,0.35,0.49,0.15
+Roaring Furnace // Steaming Sauna,1,0.35,0.49,0.15
+Faerie Seer,1,0.35,0.69,0.26
+Greedy Freebooter,1,0.35,0.79,0.15
+Slagstorm,3,0.35,0.69,0.25
+Plains,25,0.36,0.49,0.19
+Ioreth of the Healing House,1,0.36,0.79,0.15
+Prized Statue,1,0.36,0.79,0.29
+Sage of the Skies,4,0.36,0.69,0.31
+Spyglass Siren,3,0.36,0.35,0.15
+Aqueous Form,1,0.37,0.99,0.32
+Final Parting,1,0.37,0.59,0.38
+Lifecraft Engine,1,0.37,0.49,0.15
+Devoted Druid,2,0.37,0.99,0.37
+Firdoch Core,1,0.37,0.39,0.15
+Crippling Fear,1,0.37,1.29,0.26
+Hearth Elemental,4,0.37,0.69,0.15
+Shoot the Sheriff,8,0.38,0.99,0.15
+Buried Ruin,1,0.38,0.99,0.38
+Faeburrow Elder,1,0.38,0.99,0.34
+Skullsnatcher,1,0.38,0.49,0.15
+Vile Entomber,1,0.38,0.79,0.15
+Pit of Offerings,4,0.38,0.59,0.23
+Rockface Village,3,0.38,0.35,0.15
+Cori Mountain Monastery,3,0.39,2.79,0.8200000000000001
+Sevinne's Reclamation,7,0.39,0.99,0.15
+Fatal Push,1,0.39,0.99,0.15
+Awaken the Honored Dead,4,0.39,0.79,0.4
+Elvish Mystic,2,0.39,1.29,0.26
+Pithing Needle,1,0.39,0.79,0.34
+Talisman of Curiosity,1,0.39,0.99,0.2
+Mothdust Changeling,1,0.39,1.49,0.2
+Burnout Bashtronaut,4,0.39,0.69,0.15
+Glen Elendra Guardian,2,0.4,0.49,0.15
+Outrageous Robbery,2,0.4,0.79,0.25
+Restless Vinestalk,1,0.4,0.69,0.15
+Displacement Wave,1,0.4,0.79,0.32
+Inevitable Defeat,6,0.4,0.79,0.2
+Louisoix's Sacrifice,1,0.4,0.49,0.15
+Deadly Cover-Up,11,0.4,0.79,0.21
+Mountain,35,0.4,0.49,0.31
+Hardened Academic,4,0.4,0.49,0.15
+Momentum Breaker,2,0.4,0.39,0.15
+"Sandman, Shifting Scoundrel",1,0.4,0.49,0.15
+Dream Beavers,6,0.4,0.35,0.15
+Talisman of Hierarchy,1,0.41,1.49,0.4
+Floodpits Drowner,8,0.41,0.69,0.15
+Ricochet Trap,1,0.41,0.49,0.2
+"Casey Jones, Back Alley Brute",1,0.41,0.69,0.15
+Avacyn's Pilgrim,3,0.41,1.49,0.34
+Signal Pest,1,0.42,0.99,0.32
+Cut Down,1,0.42,0.79,0.18
+Island,49,0.42,0.49,0.15
+Spell Snare,6,0.42,0.79,0.15
+Reckless Fireweaver,1,0.43,1.29,0.2
+Ornithopter of Paradise,1,0.43,1.29,0.2
+Ghost Quarter,1,0.43,1.29,0.42
+"Abigale, Eloquent First-Year",1,0.43,0.49,0.15
+Return the Favor,2,0.43,0.39,0.15
+Archmage Emeritus,1,0.44,1.79,0.46
+"Tam, Mindful First-Year",1,0.44,0.59,0.15
+Snapback,4,0.44,0.99,0.3
+"Lavinia, Azorius Renegade",1,0.44,0.99,0.39
+Gudul Lurker,1,0.44,1.29,0.41
+Dramatic Reversal,3,0.44,0.99,0.26
+Molten Disaster,1,0.44,0.99,0.32
+"Momo, Friendly Flier",4,0.44,0.69,0.15
+Eclipsed Realms,1,0.45,0.99,0.15
+"Thalia, Guardian of Thraben",1,0.45,0.49,0.36
+"Hawkeye, Master Marksman",2,0.45,0.49,0.15
+Seam Rip,7,0.45,0.99,0.15
+Goblin Rabblemaster,1,0.45,1.49,0.36
+Requiting Hex,23,0.45,0.99,0.15
+Arcane Signet,19,0.46,0.99,0.46
+"Surrak, Elusive Hunter",9,0.46,0.99,0.5
+Ominous Harvest,1,0.46,0.49,0.15
+Forest,44,0.47,0.49,0.25
+Preordain,1,0.47,1.29,0.53
+Llanowar Wastes,1,0.47,1.29,0.51
+Colossal Skyturtle,1,0.48,0.69,0.31
+Marauding Mako,3,0.49,1.29,0.35
+Price of Freedom,8,0.49,1.79,0.15
+Werefox Bodyguard,1,0.49,0.59,0.16
+Culling Ritual,3,0.49,0.59,0.26
+Battered Golem,1,0.49,0.69,0.22
+Metallic Mimic,1,0.5,1.29,0.36
+Blood Pet,1,0.51,1.49,0.37
+Bringer of the Last Gift,4,0.51,0.59,0.26
+Colorstorm Stallion,10,0.51,0.49,0.15
+Nowhere to Run,6,0.51,0.79,0.15
+Reality Scramble,1,0.51,0.79,0.31
+Leyline of the Void,1,0.52,1.79,0.51
+Sire of Insanity,1,0.52,0.79,0.39
+Pawpatch Recruit,7,0.53,0.99,0.17
+Patrol Signaler,1,0.53,0.79,0.21
+Infernal Plunge,5,0.54,0.69,0.4
+Ashling's Command,1,0.54,0.99,0.26
+Soulstone Sanctuary,5,0.55,0.99,0.17
+Deserted Temple,1,0.57,1.29,0.23
+The Jolly Balloon Man,1,0.57,0.99,0.56
+Universal Automaton,2,0.57,0.99,0.41
+Traumatic Critique,5,0.58,0.49,0.15
+"Lukka, Coppercoat Outcast",1,0.58,0.99,0.47
+Trophy Mage,1,0.59,1.79,0.51
+Waterlogged Grove,1,0.6,1.79,0.65
+Smuggler's Copter,1,0.6,1.49,0.45
+"Rionya, Fire Dancer",1,0.61,0.49,0.2
+Shadow of Mortality,1,0.61,1.29,0.2
+Eidolon of Rhetoric,2,0.62,1.29,0.45
+Arid Archway,1,0.62,1.29,0.59
+Aven Mindcensor,1,0.62,0.79,0.47
+Echoing Deeps,1,0.64,0.99,0.27
+Bloodghast,4,0.65,0.99,0.51
+Boomerang Basics,7,0.67,1.29,0.15
+God-Pharaoh's Statue,1,0.67,1.49,0.52
+Autumn's Veil,1,0.67,0.69,0.29
+Starscape Cleric,2,0.68,1.79,0.38
+Curiosity,2,0.69,1.79,0.52
+"Magda, the Hoardmaster",1,0.69,1.79,0.15
+Seat of the Synod,1,0.7,1.79,0.5
+Weftstalker Ardent,1,0.7,2.29,0.41
+Neoform,1,0.73,0.99,0.15
+Great Hall of the Biblioplex,18,0.74,0.49,0.15
+Blasphemous Act,1,0.75,2.29,0.71
+Damping Sphere,3,0.75,1.29,0.6
+Fellwar Stone,7,0.75,1.79,0.66
+Petrified Hamlet,5,0.76,0.49,0.15
+Lightning Bolt,3,0.78,1.99,0.63
+"K'rrik, Son of Yawgmoth",1,0.78,1.49,0.32
+Spirit of the Labyrinth,1,0.78,0.79,0.43
+"Cecil, Dark Knight",3,0.78,0.79,0.15
+"Hammerhead, Maggia Boss",1,0.79,0.79,0.48
+Snow-Covered Mountain,1,0.81,0.99,0.72
+Combat Celebrant,1,0.81,2.29,0.8300000000000001
+Buried Alive,1,0.81,1.99,0.35
+Hydroelectric Specimen,1,0.82,1.79,0.52
+Esper Origins,2,0.82,0.79,0.22
+"Moseo, Vein's New Dean",1,0.82,0.49,0.2
+"Oko, Lorwyn Liege",1,0.83,0.99,0.33
+"Kavaron, Memorial World",5,0.83,1.99,1.26
+Strategic Betrayal,12,0.83,0.79,0.15
+Aftermath Analyst,1,0.84,1.29,0.61
+Talisman of Indulgence,3,0.85,2.79,0.89
+Practiced Offense,16,0.86,2.29,0.72
+Talisman of Dominance,3,0.87,2.49,0.86
+Tandem Lookout,1,0.87,1.29,0.72
+"Leatherhead, Swamp Stalker",7,0.89,0.79,0.15
+Rest in Peace,12,0.89,1.79,0.16
+Oath of Teferi,1,0.9,0.79,0.43
+Patrolling Peacemaker,1,0.9,0.99,0.78
+Boggart Trawler,1,0.91,2.29,0.68
+Doomsday Excruciator,4,0.91,0.99,0.2
+Day of Judgment,4,0.91,1.29,0.26
+Gray Merchant of Asphodel,1,0.91,2.29,0.67
+Dreamroot Cascade,5,0.92,1.49,0.67
+Ertai Resurrected,1,0.93,1.29,0.71
+Sundering Eruption,1,0.94,1.99,0.87
+Concealed Courtyard,3,0.95,1.99,0.76
+Emberheart Challenger,4,0.96,1.79,0.28
+Fabled Passage,11,0.96,1.49,0.92
+"Leonardo, Cutting Edge",1,0.97,1.29,0.3
+Touch the Spirit Realm,4,0.97,1.29,0.64
+"Ashling, Rekindled",8,0.98,0.99,0.45
+Fire Magic,4,0.98,1.29,0.15
+Ignoble Hierarch,2,0.98,2.29,1.02
+Relic of Legends,4,0.99,1.99,0.72
+Gravecrawler,1,1.0,1.99,0.7000000000000001
+Sazh's Chocobo,8,1.0,0.49,0.15
+Lumbering Worldwagon,1,1.0,1.29,0.2
+Treasure Vault,1,1.03,2.49,1.04
+Incubation Druid,1,1.03,1.79,0.97
+Path to Exile,2,1.04,2.49,1.11
+Cursed Totem,4,1.04,1.49,0.88
+Snow-Covered Swamp,2,1.04,0.79,0.39
+"Carnage, Crimson Chaos",2,1.05,2.29,1.21
+Urza's Cave,1,1.05,2.29,0.52
+"Ardyn, the Usurper",2,1.05,1.29,0.33
+Underground River,2,1.06,3.99,1.63
+Stock Up,27,1.06,0.99,0.43
+Sulfurous Springs,1,1.06,2.29,1.17
+Blood Celebrant,1,1.06,0.99,0.43
+Avengers Disassembled,9,1.07,3.49,0.5
+Snow-Covered Forest,4,1.08,1.49,0.72
+Day of Black Sun,7,1.08,1.49,0.3
+Shadow of the Goblin,1,1.09,1.49,0.23
+Nature's Claim,1,1.1,1.29,0.64
+Agna Qel'a,1,1.11,1.79,0.87
+"Mai, Scornful Striker",1,1.12,1.79,0.19
+Glen Elendra's Answer,1,1.12,0.99,0.46
+Sheltered by Ghosts,6,1.12,2.99,1.08
+"Veyran, Voice of Duality",1,1.13,4.49,0.9
+Thousand-Year Storm,1,1.14,1.49,0.46
+Preacher of the Schism,1,1.14,1.49,0.9
+Sapling Nursery,4,1.16,1.79,0.28
+Swords to Plowshares,6,1.17,2.29,1.53
+Insidious Roots,1,1.2,2.79,0.88
+Adaptive Automaton,1,1.21,2.29,0.6900000000000001
+Mistblade Shinobi,1,1.22,1.79,0.65
+Eternal Witness,3,1.24,1.49,1.26
+Maskwood Nexus,1,1.24,1.99,1.13
+Oildeep Gearhulk,3,1.25,1.99,0.48
+Notion Thief,1,1.27,2.49,1.3
+Daze,3,1.27,2.29,0.87
+Slaughter Pact,1,1.28,1.99,1.22
+Storm-Kiln Artist,4,1.3,2.29,1.33
+Sol Ring,25,1.33,2.49,1.43
+"Ashiok, Dream Render",1,1.33,1.29,0.61
+Shattered Sanctum,5,1.35,2.79,0.92
+Brainstorm,2,1.37,2.49,1.71
+Airbender Ascension,2,1.38,2.29,0.52
+Centaur Garden,1,1.38,1.49,0.89
+Leyline of Abundance,1,1.39,1.49,0.93
+Altar of the Wretched,1,1.39,2.99,4.68
+Burnt Offering,1,1.41,1.29,0.77
+Persist,1,1.42,1.79,0.76
+Expedition Map,2,1.42,3.99,1.0
+Disruptor Flute,1,1.43,2.99,0.9
+Peter Parker's Camera,1,1.43,1.99,0.91
+Manifold Key,1,1.45,2.29,1.09
+Soot Imp,1,1.45,1.49,1.11
+Botanical Sanctum,1,1.45,2.49,1.11
+Mightform Harmonizer,8,1.45,2.79,1.04
+Heartless Summoning,1,1.47,2.79,1.22
+Blue Elemental Blast,1,1.49,1.29,0.59
+Qarsi Revenant,9,1.49,2.79,1.55
+Surgical Extraction,1,1.49,3.49,0.78
+Sanctum Prelate,1,1.5,1.29,0.7000000000000001
+Saheeli Rai,1,1.51,2.29,1.26
+Flare of Duplication,6,1.52,2.29,1.03
+North Wind Avatar,2,1.52,1.79,0.43
+Eddymurk Crab,8,1.52,1.99,0.48
+Pinnacle Monk,1,1.55,3.49,1.32
+Knight of the Reliquary,1,1.55,1.99,1.42
+Ponder,1,1.56,4.49,2.02
+Sculpting Steel,1,1.56,3.99,2.6
+Sunderflock,8,1.56,2.29,1.03
+Fyndhorn Elves,3,1.57,3.99,2.06
+Withering Curse,3,1.57,1.29,0.6
+Virulent Emissary,1,1.58,1.79,0.15
+Dragon's Rage Channeler,1,1.58,1.49,0.77
+Abrupt Decay,2,1.58,2.29,1.04
+The Unagi of Kyoshi Island,4,1.58,2.49,0.71
+Wishclaw Talisman,11,1.58,3.99,2.04
+Marang River Regent,9,1.59,2.79,2.22
+Geier Reach Sanitarium,1,1.6,3.99,2.05
+"Haliya, Guided by Light",2,1.6,4.99,1.65
+Biomancer's Familiar,2,1.61,2.99,1.09
+Carpet of Flowers,1,1.62,3.49,1.5
+Spider-Sense,11,1.62,2.79,1.03
+Split Up,2,1.63,2.49,1.71
+Shred Memory,1,1.64,0.79,0.36
+Warden of the Grove,1,1.64,2.99,1.7
+Winternight Stories,11,1.64,2.29,0.73
+Keen-Eyed Curator,4,1.65,1.49,0.2
+Muddle the Mixture,1,1.66,2.99,1.65
+Pyrokinesis,1,1.66,3.49,2.08
+"Gogo, Mysterious Mime",1,1.69,2.79,1.5
+Changeling Outcast,1,1.71,1.49,1.45
+Strix Serenade,1,1.71,2.79,0.51
+Talisman of Creativity,1,1.71,3.49,1.7
+Copy Enchantment,2,1.72,2.49,0.8200000000000001
+Resonating Lute,1,1.73,1.49,1.35
+Flow State,7,1.73,2.99,0.93
+Sowing Mycospawn,1,1.73,2.49,1.03
+Phyrexian Walker,1,1.75,2.79,0.8300000000000001
+Tinder Wall,1,1.76,0.99,0.5
+Snow-Covered Island,1,1.78,2.99,2.06
+Restless Cottage,2,1.79,1.99,1.08
+"Krark, the Thumbless",1,1.79,1.99,1.04
+Inspiring Vantage,2,1.8,3.99,1.64
+Stormcarved Coast,9,1.84,3.99,1.91
+Blinkmoth Nexus,1,1.87,2.49,1.03
+Sundown Pass,6,1.89,2.99,1.58
+Archon of Emeria,2,1.91,2.49,1.96
+Thousand-Faced Shadow,1,1.92,3.99,1.8
+Earthbender Ascension,8,1.93,3.49,1.64
+"Tyvar, Jubilant Brawler",2,1.93,1.99,1.04
+Mishra's Bauble,1,1.94,3.49,1.82
+Lively Dirge,1,1.95,2.99,1.76
+Tablet of Discovery,23,1.95,1.99,0.96
+Deathcap Glade,8,1.95,2.79,1.92
+Ghostly Pilferer,1,1.97,4.49,1.92
+Restoration Magic,1,2.06,2.79,1.25
+Clarion Conqueror,4,2.06,3.99,2.71
+Galvanic Blast,1,2.08,2.99,2.18
+Gathering Place,4,2.1,4.49,2.3000000000000003
+Flare of Malice,1,2.11,2.99,1.01
+Lotus Field,1,2.11,3.99,2.04
+Great Furnace,4,2.12,3.99,2.66
+Oboro Breezecaller,2,2.12,0.99,0.96
+Deafening Silence,2,2.12,1.79,1.02
+Narset's Reversal,1,2.13,3.99,2.04
+Mirrorpool,1,2.17,4.49,1.3
+Tishana's Tidebinder,2,2.17,3.99,1.72
+Blooming Marsh,4,2.17,4.99,2.03
+Sunspine Lynx,5,2.18,2.79,1.11
+The Last Agni Kai,1,2.2,3.49,1.25
+Restless Reef,8,2.22,2.29,1.21
+"Aang, Swift Savior",6,2.24,3.99,1.86
+Vexing Bauble,9,2.24,4.49,2.01
+Goblin Bombardment,1,2.25,3.99,2.34
+Into the Flood Maw,10,2.34,3.99,1.87
+"Rograkh, Son of Rohgahh",4,2.35,2.99,2.08
+Mirrormade,5,2.35,3.49,1.72
+Ruthless Technomancer,1,2.35,5.49,2.43
+Consult the Star Charts,11,2.36,5.49,2.49
+Virtue of Courage,1,2.38,7.99,3.94
+Vesuva,1,2.38,4.99,2.17
+Phyrexian Metamorph,3,2.42,3.99,2.43
+"Sokenzan, Crucible of Defiance",2,2.42,6.99,3.84
+Bolt Bend,1,2.43,4.99,2.81
+Horizon Explorer,1,2.49,2.99,2.34
+Commandeer,7,2.51,4.49,1.8
+Superior Spider-Man,8,2.51,2.99,1.49
+An Offer You Can't Refuse,11,2.51,4.49,2.6
+Spark Mage,1,2.52,3.49,2.07
+"Sisay, Weatherlight Captain",1,2.53,2.49,1.9
+Clever Impersonator,3,2.53,4.99,2.44
+Curse of Opulence,1,2.55,4.49,3.19
+Necrodominance,4,2.55,4.99,1.8
+"Magda, Brazen Outlaw",4,2.57,3.49,2.7
+Famished Worldsire,1,2.6,4.49,2.08
+Dizzy Spell,2,2.63,2.49,1.21
+"Aminatou, the Fateshifter",1,2.64,3.99,2.88
+Waste Land,1,2.64,3.49,4.83
+Ainok Strike Leader,1,2.64,4.49,2.22
+Angel's Grace,3,2.65,3.99,2.56
+Baleful Mastery,1,2.65,2.99,2.62
+Elves of Deep Shadow,2,2.66,3.99,2.27
+Vial Smasher the Fierce,1,2.71,2.79,1.35
+Dark Petition,1,2.72,6.49,2.22
+Necrotic Ooze,1,2.76,3.49,2.26
+Strike It Rich,1,2.77,2.79,2.49
+"Lindblum, Industrial Regency",6,2.81,3.99,2.08
+Throat Slitter,1,2.81,2.99,2.28
+Temporal Trespass,1,2.81,4.99,2.54
+Gush,1,2.87,7.49,2.96
+Unmarked Grave,1,2.89,3.99,2.58
+Grafdigger's Cage,4,2.89,4.49,1.96
+Simian Spirit Guide,14,2.89,4.49,3.21
+Fell the Profane,1,2.95,5.99,2.96
+Memnite,3,2.98,2.79,1.01
+Hazel's Brewmaster,1,2.98,3.99,1.75
+"Marvin, Murderous Mimic",2,2.99,4.99,2.52
+"Tayam, Luminous Enigma",1,3.01,9.49,2.37
+Hope of Ghirapur,2,3.02,2.79,2.31
+Elvish Spirit Guide,6,3.04,2.49,2.61
+Soulless Jailer,1,3.06,2.29,1.12
+Aven Interrupter,7,3.06,4.49,2.64
+Howlsquad Heavy,1,3.07,4.49,1.45
+Echocasting Symposium,1,3.13,4.49,2.85
+Dismember,2,3.13,4.49,2.03
+Deceit,12,3.14,8.49,2.59
+"Teferi, Who Slows the Sunset",1,3.16,5.99,3.23
+Avatar's Wrath,3,3.18,5.99,2.95
+Felidar Guardian,1,3.18,1.99,1.38
+"Skrelv, Defector Mite",1,3.18,5.49,5.47
+Harmonic Prodigy,1,3.2,5.49,2.08
+Brain Freeze,9,3.24,4.99,2.8000000000000003
+Peer into the Abyss,2,3.25,3.99,2.81
+Veil of Summer,3,3.25,6.49,2.88
+Vibrance,4,3.25,7.49,2.61
+Mockingbird,11,3.26,4.99,2.95
+Snap,3,3.29,4.49,3.06
+Crop Rotation,5,3.3,3.49,3.23
+Dark Ritual,15,3.32,4.49,1.56
+From the Ashes,1,3.33,2.79,1.55
+Ba Sing Se,9,3.34,6.99,3.58
+Doomsday,1,3.36,5.49,2.94
+Legion Extruder,1,3.37,4.99,2.89
+Gemstone Mine,4,3.43,4.99,2.6
+Red Elemental Blast,11,3.44,4.99,2.96
+Aether Vial,1,3.45,3.49,3.25
+"Yuriko, the Tiger's Shadow",1,3.45,3.99,3.16
+Valley Floodcaller,12,3.46,5.49,3.43
+Collector Ouphe,1,3.46,3.49,1.96
+Witch Enchanter,1,3.48,6.49,3.26
+Obliterate,1,3.51,3.99,2.96
+Hidden Lair,5,3.52,5.49,3.46
+Eldritch Evolution,2,3.52,5.99,3.11
+Dryad Arbor,2,3.55,3.99,2.31
+Basalt Monolith,2,3.58,5.99,2.78
+Toxic Deluge,4,3.62,6.49,3.37
+"Braids, Arisen Nightmare",1,3.64,5.49,4.2700000000000005
+Swift Reconfiguration,2,3.65,5.49,4.16
+Get Lost,2,3.66,5.49,3.06
+Needleverge Pathway,1,3.69,4.99,4.04
+Kessig Flamebreather,1,3.71,5.49,3.53
+Endurance,2,3.73,6.99,3.61
+Flashback,4,3.73,6.99,3.12
+Voltaic Key,1,3.73,5.99,2.6
+Rejuvenating Springs,1,3.74,6.49,3.75
+Flare of Denial,1,3.77,5.49,3.01
+Thran Dynamo,1,3.79,6.49,4.11
+Submerge,1,3.79,4.99,3.13
+Mutavault,1,3.8,6.99,4.05
+"Glarb, Calamity's Augur",1,3.81,3.49,3.31
+"Tivit, Seller of Secrets",2,3.82,6.99,2.69
+Season of Weaving,1,3.85,7.99,6.03
+Emergence Zone,8,3.85,5.99,3.5
+Carrion Feeder,1,3.87,4.99,3.01
+Ghost Vacuum,12,3.88,5.99,5.67
+Clock of Omens,1,3.92,5.99,3.01
+Dwarven Armorer,1,3.96,5.99,1.95
+Borne Upon a Wind,12,3.98,4.99,3.8
+Gitaxian Probe,6,3.99,4.99,3.34
+Liquimetal Torque,1,4.01,4.49,3.12
+Bottle-Cap Blast,1,4.03,5.99,2.33
+Stormchaser's Talent,4,4.04,8.99,3.86
+Enduring Innocence,4,4.05,6.99,3.87
+Fiery Islet,1,4.08,5.49,3.82
+Magus of the Moon,1,4.13,4.49,3.9
+Dauthi Voidwalker,2,4.16,6.49,3.9
+Hickory Woodlot,1,4.16,4.49,3.01
+Hydroblast,1,4.16,6.99,2.66
+Spelunking,1,4.22,3.99,3.21
+Blind Obedience,1,4.28,6.99,3.44
+"Winota, Joiner of Forces",1,4.29,4.99,4.09
+The Darkness Crystal,1,4.35,5.99,4.0600000000000005
+Cosmogrand Zenith,2,4.41,8.49,6.08
+M.O.D.O.K.,1,4.42,6.99,4.15
+High Noon,6,4.43,9.99,5.0600000000000005
+Phantasmal Image,1,4.43,6.99,4.15
+"Beza, the Bounding Spring",2,4.44,5.49,4.15
+Temporal Mastery,1,4.46,5.49,3.59
+Nature's Rhythm,7,4.49,6.99,4.58
+Banishing Knack,1,4.52,1.49,1.04
+"Karn, the Great Creator",1,4.56,5.99,3.93
+Manamorphose,1,4.56,5.99,4.84
+Windfall,2,4.71,7.99,4.42
+Root Maze,1,4.71,7.49,4.37
+Beseech the Queen,1,4.72,4.99,4.01
+Professor Dellian Fel,3,4.73,6.99,3.86
+Abandoned Air Temple,7,4.73,9.99,4.89
+High Fae Trickster,6,4.73,8.99,4.16
+"Nicol Bolas, Dragon-God",1,4.75,5.49,4.14
+Shifting Woodland,4,4.78,7.49,2.86
+Six,1,4.81,7.99,5.4
+Springheart Nantuko,2,4.81,6.99,4.14
+Ancient Cornucopia,4,4.81,8.99,4.69
+Summoner's Pact,1,4.81,5.49,3.02
+Gavony Township,1,4.84,7.99,4.11
+Pyretic Ritual,2,4.85,8.49,4.08
+Torpor Orb,4,4.87,7.99,3.51
+Horizon of Progress,1,4.88,4.99,4.39
+"Kediss, Emberclaw Familiar",1,4.94,8.99,5.13
+Animate Dead,1,4.96,7.49,5.0
+Spirebluff Canal,20,4.96,9.99,3.58
+Gifts Ungiven,4,4.98,5.49,4.53
+Orim's Chant,3,5.01,8.99,4.86
+Blade Historian,1,5.03,9.49,5.43
+Ephemerate,1,5.05,5.99,5.19
+"Phelia, Exuberant Shepherd",1,5.05,8.49,3.64
+Saw in Half,1,5.13,7.49,4.78
+"Eiganjo, Seat of the Empire",1,5.13,9.99,5.19
+Gut Shot,3,5.14,7.99,4.15
+Blightstep Pathway,1,5.22,7.99,5.73
+Last Chance,3,5.26,14.99,8.75
+Slickshot Show-Off,4,5.27,8.99,5.76
+Crystal Vein,3,5.29,8.99,4.04
+Sylvan Safekeeper,2,5.29,7.99,4.88
+"Niv-Mizzet, Parun",1,5.31,6.49,5.0600000000000005
+Professor Onyx,2,5.38,8.49,5.21
+Sudden Substitution,1,5.42,6.99,4.57
+Counterbalance,3,5.43,4.49,4.09
+Three Steps Ahead,10,5.46,8.99,4.16
+Professional Face-Breaker,6,5.51,7.99,5.72
+Hoarding Broodlord,1,5.54,7.49,4.5200000000000005
+Hullbreaker Horror,2,5.61,8.49,5.86
+Sink into Stupor,5,5.63,10.99,5.87
+Ethersworn Canonist,2,5.66,5.99,4.11
+Lotus Cobra,1,5.67,6.99,4.5
+Blossoming Tortoise,1,5.67,6.99,5.19
+Gleeful Arsonist,1,5.7,7.49,4.48
+Erode,15,5.71,9.49,3.9
+Desperate Ritual,3,5.72,7.99,4.18
+Fleshwrither,1,5.85,4.99,1.56
+"Boromir, Warden of the Tower",1,5.85,7.99,5.21
+Rite of Flame,12,5.94,7.99,5.47
+Chord of Calling,6,5.95,7.99,5.98
+Omniscience,4,5.96,8.49,5.34
+Whir of Invention,1,6.0,8.49,5.05
+Dwarven Bloodboiler,1,6.01,9.99,5.73
+Elvish Reclaimer,1,6.02,5.99,4.66
+"Teferi, Time Raveler",2,6.03,7.99,6.1000000000000005
+Emeritus of Ideation,12,6.13,8.49,5.72
+Pest Control,1,6.19,7.99,5.73
+Lazotep Quarry,1,6.22,7.99,5.19
+Snuff Out,3,6.34,8.49,6.44
+Jeskai Revelation,16,6.36,8.99,4.34
+Spectator Seating,1,6.41,8.99,6.63
+Enduring Curiosity,3,6.45,8.99,6.87
+Pollywog Prodigy,1,6.47,10.99,6.03
+Urza's Bauble,1,6.49,9.49,7.05
+Defense Grid,4,6.54,9.99,6.19
+Imp's Mischief,1,6.54,9.49,7.0600000000000005
+Twincast,1,6.55,9.49,5.61
+Rain of Filth,5,6.7,9.49,4.86
+Hushwood Verge,12,6.72,13.99,7.01
+Hallowed Fountain,19,6.77,10.99,6.890000000000001
+Multiversal Passage,22,6.77,10.99,5.71
+Willowrush Verge,3,6.78,9.99,5.8
+Imposter Mech,1,6.86,11.99,5.94
+Cool but Rude,6,6.86,12.99,7.17
+Blood Moon,1,6.91,11.99,7.04
+Wistfulness,6,6.92,15.99,8.06
+Noxious Revival,2,6.93,10.99,5.72
+Archivist of Oghma,2,6.93,9.49,6.16
+Stomping Ground,1,7.02,10.99,6.25
+Flusterstorm,17,7.03,7.99,6.24
+Virtue of Persistence,2,7.03,8.99,6.8100000000000005
+Force of Despair,1,7.08,6.99,7.07
+Deathrite Shaman,5,7.09,8.49,6.25
+Time Sieve,2,7.17,11.99,8.08
+Kederekt Parasite,1,7.2,10.99,4.16
+Silence,10,7.23,11.99,7.28
+Stranglehold,1,7.24,9.99,8.32
+"Tevesh Szat, Doom of Fools",1,7.28,7.99,7.29
+Dawn's Truce,3,7.32,12.99,8.58
+Sacrifice,2,7.35,5.49,3.95
+"Nezahal, Primal Tide",1,7.42,11.99,7.24
+Walking Ballista,3,7.45,8.99,7.17
+Temple Garden,12,7.46,9.99,7.55
+Command Beacon,3,7.47,11.99,7.45
+Floodfarm Verge,9,7.49,11.99,7.83
+Mount Doom,3,7.5,9.49,7.42
+Formidable Speaker,11,7.5,10.99,7.16
+Xorn,1,7.51,10.99,7.28
+Arena of Glory,2,7.52,11.99,6.6000000000000005
+Culling the Weak,11,7.55,11.99,5.72
+"Sidisi, Undead Vizier",1,7.59,9.49,5.8
+Castle Garenbrig,1,7.62,12.99,7.29
+Reanimate,2,7.7,11.99,7.92
+Training Grounds,2,7.71,12.99,8.22
+Flesh Duplicate,3,7.77,7.99,6.97
+Wheel of Misfortune,2,7.8,10.99,6.58
+Pyroblast,8,7.91,12.99,8.040000000000001
+Mindcrank,1,7.94,11.99,7.81
+Breath of Fury,1,7.95,12.99,9.28
+Scheming Symmetry,1,7.96,12.99,8.3
+Demonic Consultation,12,7.99,9.49,6.18
+Force of Vigor,2,8.04,9.99,7.29
+Mistrise Village,5,8.07,13.99,7.49
+Starting Town,32,8.08,10.99,8.700000000000001
+Blazemire Verge,1,8.18,12.99,8.9
+Growing Rites of Itlimoc,1,8.2,15.99,7.97
+Steal Enchantment,2,8.33,5.99,6.24
+Tataru Taru,9,8.34,9.99,8.16
+Sanctum of Eternity,1,8.4,13.99,6.76
+Untimely Malfunction,1,8.43,11.99,7.45
+"Yoshimaru, Ever Faithful",1,8.51,9.49,6.25
+Paradise Mantle,4,8.52,10.99,7.41
+Chain of Smog,2,8.54,9.49,6.1000000000000005
+Mental Misstep,17,8.62,10.99,6.86
+Mnemonic Betrayal,6,8.68,9.49,7.8
+Swan Song,13,8.68,13.99,8.8
+Jeweled Amulet,1,8.69,9.49,4.28
+Glint-Horn Buccaneer,1,8.71,13.99,5.74
+Deep Gnome Terramancer,1,8.73,8.99,8.52
+Overgrown Tomb,9,8.92,12.99,8.55
+"Slicer, Hired Muscle",1,8.94,10.99,7.29
+"Chimil, the Inner Sun",1,8.97,8.99,8.53
+Watery Grave,29,8.99,14.99,8.42
+"Jace, Wielder of Mysteries",1,9.09,11.99,8.59
+Blood Crypt,13,9.1,13.99,8.85
+Godless Shrine,7,9.14,13.99,8.22
+Mystic Remora,17,9.16,11.99,7.05
+"Ajani, Nacatl Pariah",1,9.17,13.99,6.65
+Mindbreak Trap,17,9.22,10.99,8.22
+"Vilis, Broker of Blood",1,9.27,14.99,8.83
+"Kaito, Bane of Nightmares",5,9.32,16.99,8.33
+"Chandra, Awakened Inferno",1,9.34,13.99,7.82
+Breeding Pool,10,9.36,15.99,8.33
+Luxury Suite,2,9.42,13.99,9.55
+Forbidden Orchard,2,9.59,12.99,7.79
+Shatterskull Smashing,1,9.65,13.99,9.63
+Wastewood Verge,7,9.68,13.99,9.89
+Underworld Breach,11,9.8,11.99,7.05
+Goblin Engineer,2,9.94,10.99,9.15
+Bleachbone Verge,3,9.95,14.99,9.34
+Raucous Theater,3,10.01,15.99,9.77
+Improvisation Capstone,6,10.07,15.99,10.4
+Tibalt's Trickery,1,10.08,16.99,9.37
+"Derevi, Empyrial Tactician",2,10.09,8.49,6.19
+Sacred Foundry,11,10.12,16.99,10.4
+Meticulous Archive,1,10.12,15.99,10.21
+Redirect Lightning,7,10.13,16.99,9.83
+Gloomlake Verge,15,10.14,12.99,9.1
+The Legend of Roku,2,10.17,16.99,10.1
+Mossborn Hydra,7,10.2,16.99,9.47
+Ophidian Eye,2,10.56,15.99,10.09
+Rootpath Purifier,1,10.67,8.99,10.39
+Eladamri's Call,1,10.67,13.99,10.39
+Noble Hierarch,3,10.74,18.99,10.96
+Ad Nauseam,9,10.92,9.99,10.42
+Praetor's Grasp,7,11.03,16.99,9.25
+"Aclazotz, Deepest Betrayal",1,11.04,11.99,9.37
+Faerie Mastermind,10,11.09,14.99,9.88
+Clown Car,1,11.1,16.99,11.12
+Jet Medallion,1,11.1,15.99,10.52
+"Shang-Chi, Master of Kung Fu",2,11.15,16.99,10.04
+Windswept Heath,12,11.23,13.99,11.02
+Giver of Runes,1,11.26,11.99,10.1
+Seething Song,2,11.32,12.99,10.45
+Steam Vents,42,11.52,19.99,10.7
+Birds of Paradise,7,11.52,17.99,11.34
+"Takenuma, Abandoned Mire",1,11.56,16.99,10.93
+Moonshadow,5,11.58,16.99,10.13
+Enduring Tenacity,4,11.73,16.99,11.98
+Misdirection,5,11.76,18.99,11.93
+Eldrazi Confluence,1,11.76,16.99,10.46
+City of Brass,20,11.81,15.99,10.26
+"Uthros, Titanic Godcore",4,11.85,18.99,11.29
+Dracogenesis,1,12.01,13.99,13.33
+Invasion of Ikoria,2,12.14,15.99,12.3
+Balthor the Defiled,1,12.17,12.99,9.69
+Trickbind,1,12.31,11.99,7.29
+"Lotho, Corrupt Shirriff",7,12.37,16.99,12.49
+Emiel the Blessed,2,12.49,11.99,13.63
+Idyllic Tutor,2,12.55,13.99,13.07
+Contamination,1,12.61,14.99,10.37
+Underground Mortuary,1,12.68,20.99,11.49
+Sphere of Resistance,1,12.79,11.99,12.18
+Bloom Tender,2,12.86,16.99,13.31
+Enduring Vitality,4,13.08,17.99,20.05
+Cabal Ritual,12,13.16,18.99,11.88
+Abhorrent Oculus,1,13.18,21.99,14.5
+Jennifer Walters,4,13.3,16.99,13.54
+Chain of Vapor,9,13.35,16.99,9.7
+"Razaketh, the Foulblooded",1,13.58,16.99,13.3
+Undercity Sewers,10,13.6,20.99,13.65
+"Kinnan, Bonder Prodigy",2,13.76,17.99,13.51
+"Valgavoth, Terror Eater",1,13.84,21.99,15.79
+Imperial Recruiter,2,13.86,16.99,14.05
+"Ral, Crackling Wit",9,13.91,16.99,13.04
+"Dihada, Binder of Wills",1,13.98,24.99,14.32
+Drannith Magistrate,4,14.1,19.99,12.57
+Ashnod's Altar,1,14.15,19.99,14.32
+Icetill Explorer,6,14.19,22.99,14.32
+Cave-In,1,14.33,20.99,10.54
+Thousand-Year Elixir,1,14.34,23.99,14.53
+Warren Soultrader,1,14.34,20.99,13.79
+Vault of Champions,1,14.4,19.99,16.01
+"Yavimaya, Cradle of Growth",2,14.43,21.99,15.09
+King T'Challa,4,14.53,16.99,13.09
+Flooded Strand,18,14.69,22.99,12.85
+"Shinka, the Bloodsoaked Keep",1,14.77,18.99,14.25
+Hammerheim,1,14.78,24.99,8.33
+Insidious Dreams,1,14.84,13.99,14.99
+"Urza, Lord High Artificer",1,14.96,19.99,14.05
+All Will Be One,1,15.22,17.99,14.06
+Thundering Falls,1,15.47,20.99,14.69
+Final Fortune,10,15.49,15.99,14.58
+Snapcaster Mage,1,15.59,19.99,14.16
+Black Market Connections,1,15.66,20.99,14.37
+Chalice of the Void,1,15.73,29.99,12.48
+"Ashaya, Soul of the Wild",1,15.8,17.99,15.36
+Spellseeker,2,15.83,27.99,12.49
+Disrupting Shoal,2,15.97,14.99,39.89
+Subtlety,1,16.13,17.99,11.58
+Grand Abolisher,9,16.28,20.99,16.93
+Bolas's Citadel,3,16.31,12.99,10.4
+Gamble,12,16.37,19.99,16.67
+Impossible Man,1,16.45,11.99,13.8
+Dance of the Dead,1,16.48,18.99,9.97
+Mystical Tutor,10,16.53,20.99,16.67
+Diabolic Intent,8,16.65,18.99,18.65
+Wooded Foothills,14,16.76,24.99,16.42
+Knuckles the Echidna,2,16.91,21.99,16.67
+Training Center,2,16.95,22.99,18.77
+Voice of Victory,15,16.98,27.99,17.44
+Entomb,1,17.14,24.99,14.58
+Pact of Negation,15,17.24,22.99,16.4
+Grand Arbiter Augustin IV,1,17.28,16.99,17.19
+Warrior's Oath,3,17.34,21.99,14.82
+Strip Mine,1,17.42,19.99,13.54
+Altar of Dementia,1,17.76,22.99,16.2
+Bloodstained Mire,15,17.79,24.99,17.830000000000002
+Necromancy,1,17.85,23.99,15.66
+Sea of Clouds,3,17.86,29.99,20.25
+Beseech the Mirror,10,17.93,23.99,20.14
+Opposition Agent,8,17.95,22.99,18.75
+Super Shredder,1,18.12,20.99,16.65
+"Esika, God of the Tree",1,18.15,21.99,16.66
+"Ob Nixilis, Captive Kingpin",1,18.32,19.99,16.67
+"Boseiju, Who Shelters All",1,18.38,20.99,14.55
+Tarnished Citadel,7,18.74,17.99,7.22
+Grinding Station,4,19.08,19.99,14.19
+"Tezzeret, Cruel Captain",4,19.26,27.99,17.7
+Polluted Delta,20,19.33,27.99,19.16
+Pirated Copy,1,19.45,22.99,18.18
+Bloodchief Ascension,1,20.0,27.99,14.58
+Overlord of the Balemurk,4,20.05,29.99,23.96
+"Linvala, Keeper of Silence",1,20.18,24.99,19.68
+Riverpyre Verge,30,20.19,27.99,20.1
+"Lumra, Bellow of the Woods",1,20.37,32.99,20.41
+Hexing Squelcher,14,20.42,27.99,19.8
+Goblin Welder,1,21.9,23.99,25.51
+Charismatic Conqueror,1,22.25,24.99,20.05
+Thassa's Oracle,11,23.84,27.99,20.0
+Tiller Engine,1,24.02,37.99,24.9
+The Cabbage Merchant,5,24.04,37.99,23.15
+City of Solitude,1,24.52,22.99,14.58
+"Mikaeus, the Unhallowed",1,25.1,27.99,26.02
+Worldly Tutor,1,25.42,37.99,25.0
+Grim Tutor,4,25.66,27.99,23.96
+Terror of the Peaks,3,25.74,34.99,26.92
+Phyrexian Tower,7,26.05,42.99,25.41
+The Meathook Massacre,1,26.25,32.99,27.77
+Deadly Rollick,8,26.46,24.99,26.74
+"Nissa, Resurgent Animist",1,26.64,37.99,27.49
+Verdant Catacombs,19,27.01,37.99,29.05
+"Otawara, Soaring City",17,27.18,42.99,29.09
+Green Sun's Zenith,4,27.26,37.99,27.09
+Dosan the Falling Leaf,1,27.55,39.99,20.74
+Natural Order,1,27.57,39.99,28.35
+Sylvan Library,3,27.66,37.99,27.45
+Morphic Pool,3,28.0,37.99,29.17
+Agadeem's Awakening,1,28.62,29.99,27.61
+Arid Mesa,15,28.7,42.99,30.41
+Cyclonic Rift,2,29.53,39.99,28.22
+Trinisphere,2,29.56,54.99,30.95
+Field of the Dead,1,29.58,29.99,30.06
+Talon Gates of Madara,6,30.17,29.99,29.44
+Serra Ascendant,1,30.18,29.99,29.17
+Delighted Halfling,6,30.29,37.99,27.66
+Vaultborn Tyrant,1,30.34,47.99,35.94
+Marsh Flats,19,30.45,42.99,29.68
+Displacer Kitten,3,30.94,34.99,28.12
+"Yawgmoth, Thran Physician",1,30.95,32.99,30.34
+Consecrated Sphinx,1,31.36,29.99,26.35
+Ouroboroid,6,31.7,39.99,30.05
+Quantum Riddler,13,31.87,54.99,31.26
+Exploration,2,32.28,42.99,21.96
+Scroll Rack,1,32.45,42.99,34.36
+Mana Confluence,20,32.5,47.99,32.730000000000004
+Tainted Pact,14,32.54,37.99,31.26
+"Birgi, God of Storytelling",7,32.57,42.99,33.6
+"Delney, Streetwise Lookout",1,33.31,47.99,36.94
+Solitude,1,33.45,44.99,36.19
+Portal to Phyrexia,1,33.64,54.99,38.81
+Prismatic Vista,2,34.03,47.99,34.74
+Sakashima of a Thousand Faces,1,34.07,42.99,30.08
+Lotus Petal,24,34.1,44.99,27.31
+Bloodthirsty Conqueror,3,34.23,39.99,35.95
+Maralen of the Mornsong,1,34.99,29.99,20.03
+Enlightened Tutor,11,35.01,37.99,32.3
+Tangle Wire,1,35.26,32.99,22.45
+Misty Rainforest,18,35.37,39.99,36.45
+"Wan Shi Tong, Librarian",9,35.76,54.99,35.84
+Agatha's Soul Cauldron,4,36.08,39.99,39.28
+Necropotence,9,36.75,44.99,40.41
+Vivi Ornitier,2,36.88,44.99,38.02
+"Elspeth, Storm Slayer",2,37.05,47.99,38.55
+Chromatic Orrery,1,37.24,54.99,40.62
+Ranger-Captain of Eos,10,37.73,54.99,39.83
+Scalding Tarn,16,38.31,44.99,36.47
+Ocelot Pride,2,39.52,57.99,40.79
+Sea Gate Restoration,2,39.77,54.99,40.14
+Jeska's Will,10,40.54,44.99,42.38
+Urza's Saga,8,41.88,54.99,41.23
+Food Chain,1,42.64,29.99,40.07
+"Ragavan, Nimble Pilferer",13,43.41,54.99,45.19
+Sensei's Divining Top,4,44.19,54.99,40.1
+Finale of Devastation,5,44.54,84.99,73.98
+Scapeshift,1,47.06,54.99,46.5
+Badgermole Cub,20,49.32,79.99,48.97
+Roaming Throne,5,49.48,57.99,50.16
+Orcish Bowmasters,10,49.59,54.99,47.66
+"Boseiju, Who Endures",8,49.88,69.99,46.87
+Smothering Tithe,9,50.01,69.99,50.47
+Allosaurus Shepherd,1,50.58,54.99,44.28
+Gemstone Caverns,25,50.65,84.99,52.97
+Cavern of Souls,25,51.51,57.99,52.08
+"Nykthos, Shrine to Nyx",1,52.15,69.99,48.16
+Force of Negation,11,52.39,69.99,53.76
+Mana Drain,1,52.66,69.99,49.78
+Vampiric Tutor,17,53.35,57.99,56.22
+Amulet of Vigor,1,53.47,57.99,42.12
+Firestorm,1,53.58,57.99,35.99
+Fierce Guardianship,16,54.27,84.99,56.83
+"Urborg, Tomb of Yawgmoth",1,55.57,74.99,57.97
+Esper Sentinel,11,57.11,74.99,59.97
+"Minamo, School at Water's Edge",1,61.51,74.99,46.92
+Force of Will,17,62.64,74.99,62.52
+Rhystic Study,17,62.91,74.99,46.68
+Demonic Tutor,17,63.94,79.99,43.64
+"Sun Quan, Lord of Wu",1,64.14,84.99,68.77
+Copy Artifact,1,65.02,89.99,36.24
+Deflecting Swat,15,65.39,99.99,68.48
+"Greymond, Avacyn's Stalwart",1,67.25,89.99,65.81
+Spectacular Spider-Man,2,73.74,99.99,78.15
+Mox Amber,17,76.28,94.99,77.36
+"Sheoldred, the Apocalypse",1,95.98,139.99,102.11
+Mana Vault,25,96.9,119.99,75.02
+Shallow Grave,1,99.75,159.99,104.2
+The One Ring,6,105.96,129.99,99.0
+Null Rod,1,113.7,129.99,88.55
+Ancient Tomb,24,125.97,119.99,135.46
+Chrome Mox,23,152.41,179.99,148.05
+Imperial Seal,15,163.39,199.99,171.93
+Savannah,4,195.82,279.99,234.23
+Bayou,5,232.81,229.99,247.48
+Mox Opal,17,234.22,329.99,218.82
+Yawgmoth's Will,5,245.26,279.99,171.93
+Earthcraft,1,256.07,349.99,195.11
+Tundra,9,278.32,279.99,241.6
+Intuition,4,358.35,499.99,268.59000000000003
+Plateau,7,375.14,399.99,258.74
+Wheel of Fortune,4,379.5,499.99,248.8
+Transmute Artifact,2,396.45,649.99,304.26
+Survival of the Fittest,1,396.95,549.99,304.40000000000003
+Taiga,2,424.19,449.99,303.52
+Scrubland,8,435.57,449.99,293.3
+Grim Monolith,8,470.23,549.99,338.65000000000003
+Nether Void,1,507.99,599.99,656.44
+Badlands,9,533.06,649.99,291.91
+City of Traitors,17,538.42,649.99,435.06
+Tropical Island,6,579.93,649.99,415.51
+Timetwister,1,798.33,1099.99,989.88
+Lion's Eye Diamond,14,816.91,899.99,750.24
+Volcanic Island,10,861.87,1399.99,677.3000000000001
+Underground Sea,12,987.2,1199.99,731.11
+Mox Diamond,22,1139.92,1499.99,928.48
+Chains of Mephistopheles,1,1183.06,1399.99,1094.1
+Gaea's Cradle,6,1622.57,2299.99,1087.74
+The Tabernacle at Pendrell Vale,1,2899.99,4299.99,2917.58
