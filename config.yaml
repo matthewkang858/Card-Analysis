@@ -41,12 +41,13 @@ vendors:
     # Which price column to use from the feed: lowPrice | marketPrice | midPrice
     price_field: marketPrice
     shipping:
-      # TCGplayer orders ship from many independent sellers. Without seller-level
-      # inventory we model consolidation: you can source ~cards_per_seller cards
-      # from one seller before needing another.
-      cards_per_seller: 8       # ASSUMPTION
-      per_seller_fee: 1.49      # ASSUMPTION: typical small-seller shipping
-      seller_free_threshold: 35.00  # ASSUMPTION: seller subtotal at which shipping is waived (TCG Direct-ish)
+      # TCG Direct (primary seller) ships free once the cart clears the
+      # threshold; every other seller charges the flat per_seller_fee (max $5).
+      # cards_per_seller calibrated so full-deck TCG shipping matches the
+      # real-cart study (~$20 Standard / ~$25 Commander per ~100-card deck).
+      cards_per_seller: 20      # calibrated to real-cart TCG shipping
+      per_seller_fee: 5.00      # non-Direct sellers: flat fee, max $5
+      seller_free_threshold: 50.00  # TCG Direct free-shipping threshold
 
   manapool:
     # ManaPool has a public API — see https://manapool.com/api for docs & auth.

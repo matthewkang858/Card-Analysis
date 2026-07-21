@@ -23,19 +23,20 @@ def flat_threshold_shipping(subtotal: float, free_threshold: float, flat_fee: fl
 
 def tcg_multiseller_shipping(prices: list[float], cards_per_seller: int,
                              per_seller_fee: float, seller_free_threshold: float) -> float:
-    """Marketplace model: the basket is split across ceil(n / cards_per_seller)
-    sellers. Expensive cards are grouped first so high-value sellers hit their
-    free-shipping threshold the way a real buyer would consolidate.
+    """Marketplace model. TCG Direct is the primary seller and ships FREE once
+    the cart clears the threshold ($50); every other seller charges a flat fee
+    (max $5) — Direct does not stock everything, so a basket fragments across
+    ceil(n / cards_per_seller) sellers and each non-Direct one bills shipping.
+    Calibrated (cards_per_seller) to the real-cart study's TCG shipping.
     """
     if not prices:
         return 0.0
-    ordered = sorted(prices, reverse=True)
-    n_sellers = math.ceil(len(ordered) / cards_per_seller)
-    fee = 0.0
-    for i in range(n_sellers):
-        chunk = ordered[i * cards_per_seller:(i + 1) * cards_per_seller]
-        if sum(chunk) < seller_free_threshold:
-            fee += per_seller_fee
+    total = sum(prices)
+    n_sellers = math.ceil(len(prices) / cards_per_seller)
+    # Seller 0 = TCG Direct: free when the cart clears the threshold, else pays.
+    fee = 0.0 if total >= seller_free_threshold else per_seller_fee
+    # Every other seller charges the flat fee.
+    fee += (n_sellers - 1) * per_seller_fee
     return fee
 
 
