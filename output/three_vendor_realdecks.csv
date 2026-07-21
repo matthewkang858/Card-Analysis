@@ -1,0 +1,51 @@
+fmt,deck,tcg,ck,mp,mp_cov
+commander,"Dargo, the Shipwrecker",6002.31,6036.59,5163.92,97.0
+commander,"Glarb, Calamity's Augur",7985.78,7812.71,4960.630000000001,100.0
+commander,"Ishai, Ojutai Dragonspeaker",6309.71,7208.31,5598.199999999999,97.0
+commander,"K'rrik, Son of Yawgmoth",4025.81,4300.1,3357.71,100.0
+commander,"Kinnan, Bonder Prodigy",5122.05,4785.18,3941.4200000000005,98.0
+commander,"Krark, the Thumbless",6509.66,7495.65,5586.460000000001,99.0
+commander,"Kraum, Ludevic's Opus",8592.51,9280.91,7119.23,99.0
+commander,"Lumra, Bellow of the Woods",8351.08,9943.28,7705.36,99.0
+commander,"Magda, Brazen Outlaw",2019.51,1959.36,1227.37,96.0
+commander,"Malcolm, Keen-Eyed Navigator",5991.55,6944.98,5462.79,99.0
+commander,Marneus Calgar,5747.41,5786.02,4915.430000000001,99.0
+commander,"Ob Nixilis, Captive Kingpin",5677.45,6198.77,4810.310000000001,100.0
+commander,"Rograkh, Son of Rohgahh",7391.13,8435.46,5895.150000000001,99.0
+commander,"Silas Renn, Seeker Adept",7391.13,8435.46,5895.150000000001,99.0
+commander,"Sisay, Weatherlight Captain",9879.95,9849.38,6531.17,99.0
+commander,"Tayam, Luminous Enigma",5665.47,5906.49,3811.78,100.0
+commander,"Tevesh Szat, Doom of Fools",5875.31,6214.41,5057.83,99.0
+commander,"Thrasios, Triton Hero",8567.8,8436.04,5832.889999999999,100.0
+commander,"Tivit, Seller of Secrets",6325.98,6621.19,5218.950000000001,99.0
+commander,Tymna the Weaver,8592.51,9276.41,7119.23,99.0
+commander,Vial Smasher the Fierce,8959.02,8682.64,6494.58,99.0
+commander,Vivi Ornitier,5951.84,19781.91,5716.340000000001,96.0
+commander,"Winota, Joiner of Forces",3485.6,3612.66,2930.3,97.0
+commander,"Yoshimaru, Ever Faithful",6145.06,6438.54,4429.049999999999,98.0
+commander,"Yuriko, the Tiger's Shadow",4094.72,4160.51,3492.67,93.0
+standard,4 Color Control,274.11,337.76,175.23000000000002,98.66666666666667
+standard,Azorius Blink,503.49,454.77,268.65999999999997,97.33333333333333
+standard,Azorius Flash,347.89,405.26,243.37,88.33333333333333
+standard,Converge Control,435.77,476.42,296.13999999999993,98.66666666666667
+standard,Dimir Control,437.14,480.7,287.89,96.0
+standard,Dimir Excruciator,361.17,400.88,237.01,92.0
+standard,Dimir Midrange,206.58,247.28,138.07999999999998,96.0
+standard,Golgari Midrange,425.9,471.9,310.19000000000005,95.77464788732394
+standard,Izzet Elementals,631.3,704.24,519.63,93.33333333333333
+standard,Izzet Lessons,359.9,533.7,284.18999999999994,94.66666666666667
+standard,Izzet Opus,405.04,535.89,293.56000000000006,92.0
+standard,Izzet Prowess,304.58,365.22,216.88000000000005,98.66666666666667
+standard,Izzet Spellementals,288.07,312.74,207.12000000000003,94.66666666666667
+standard,Jeskai Control,281.45,294.35,156.20000000000002,92.0
+standard,Jeskai Lessons,327.81,440.52,241.03,97.33333333333333
+standard,Mardu Discard,282.7,362.17,215.17999999999995,100.0
+standard,Mono Green Landfall,427.11,538.14,324.24,97.33333333333333
+standard,Mono-Red Aggro,169.08,184.18,91.41,97.22222222222223
+standard,Rogue,389.0,486.57,323.28999999999996,100.0
+standard,Selesnya Counters,570.26,679.16,436.98,100.0
+standard,Selesnya Gearhulk,662.22,858.34,477.09999999999997,93.33333333333333
+standard,Selesnya Landfall,487.28,692.91,338.18,97.33333333333333
+standard,Sultai Control,276.05,242.28,172.68000000000004,96.0
+standard,Sultai Reanimator,631.71,704.68,501.38000000000005,100.0
+standard,Temur Kona,544.33,602.29,440.14000000000004,89.33333333333333
