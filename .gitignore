@@ -5,3 +5,4 @@ output/cache/
 .env
 output/cache/*.gz
 output/cache/*.json
+scratchpad/
